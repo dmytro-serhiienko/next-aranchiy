@@ -65,11 +65,7 @@ export default function Header({ onReserveClick }: Props) {
         </nav>
       </header>
 
-      <BurgerMenu
-        isOpen={burgerOpen}
-        onClose={() => setBurgerOpen(false)}
-        onReserveClick={onReserveClick}
-      />
+      <BurgerMenu isOpen={burgerOpen} onClose={() => setBurgerOpen(false)} />
     </>
   );
 }
