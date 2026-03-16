@@ -34,10 +34,9 @@ const socialLinks = [
 interface Props {
   isOpen: boolean;
   onClose: () => void;
-  onReserveClick: () => void;
 }
 
-export default function BurgerMenu({ isOpen, onClose, onReserveClick }: Props) {
+export default function BurgerMenu({ isOpen, onClose }: Props) {
   const [isClosing, setIsClosing] = useState(false);
 
   const handleClose = useCallback(() => {
@@ -47,17 +46,6 @@ export default function BurgerMenu({ isOpen, onClose, onReserveClick }: Props) {
       onClose();
     }, CLOSE_DURATION);
   }, [onClose]);
-
-  const handleReserve = useCallback(
-    (e: React.MouseEvent) => {
-      e.preventDefault();
-      handleClose();
-      setTimeout(() => {
-        onReserveClick();
-      }, CLOSE_DURATION);
-    },
-    [handleClose, onReserveClick],
-  );
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
