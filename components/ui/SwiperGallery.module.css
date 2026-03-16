@@ -1,0 +1,161 @@
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (min-width: 1200px) {
+  .gallery {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 14px;
+  }
+}
+
+.mainSwiper {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  background: transparent;
+  touch-action: pan-y;
+}
+
+@media (min-width: 1200px) {
+  .mainSwiper {
+    width: 50vw;
+    flex: none;
+    flex-shrink: 0;
+  }
+}
+
+.mainSlide {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+@media (min-width: 768px) {
+  .mainSlide {
+    height: 440px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mainSlide {
+    height: 480px;
+    cursor: zoom-in;
+  }
+}
+
+.mainImg {
+  user-select: none;
+}
+
+/* Nav arrows */
+.mainSwiper :global(.swiper-button-prev),
+.mainSwiper :global(.swiper-button-next) {
+  --swiper-navigation-size: 11px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-top: -15px;
+  transition: background 0.2s;
+}
+
+.mainSwiper :global(.swiper-button-prev) {
+  left: 10px;
+}
+.mainSwiper :global(.swiper-button-next) {
+  right: 10px;
+}
+
+.mainSwiper :global(.swiper-button-prev):hover,
+.mainSwiper :global(.swiper-button-next):hover {
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.mainSwiper :global(.swiper-button-prev)::after,
+.mainSwiper :global(.swiper-button-next)::after {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Thumbs */
+.thumbsSwiper {
+  width: 100%;
+  overflow: hidden;
+  touch-action: pan-x;
+  padding: 8px 0;
+}
+
+.thumbsSwiper :global(.swiper-wrapper) {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  padding: 4px 0;
+}
+
+.thumbSlide {
+  flex-shrink: 0;
+  width: 90px !important;
+  height: 64px !important;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 0.25s;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .thumbSlide {
+    width: 110px !important;
+    height: 76px !important;
+  }
+}
+
+.thumbSlide:global(.swiper-slide-thumb-active) {
+  opacity: 1;
+}
+
+.thumbSlide:hover {
+  opacity: 0.85;
+}
+
+.thumbImg {
+  object-fit: cover;
+}
+
+@media (min-width: 1200px) {
+  .thumbsSwiper {
+    width: 420px;
+    flex-shrink: 0;
+    padding: 0;
+    height: 480px;
+    overflow: clip;
+    touch-action: none;
+  }
+
+  .thumbsSwiper :global(.swiper-wrapper) {
+    display: grid !important;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 4px;
+    flex-wrap: unset;
+    overflow: visible;
+    padding: 0;
+    width: 100% !important;
+    height: 100%;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .thumbSlide {
+    width: 100% !important;
+    height: 0 !important;
+    padding-bottom: 100% !important;
+    position: relative;
+  }
+}
