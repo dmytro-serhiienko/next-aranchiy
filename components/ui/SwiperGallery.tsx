@@ -1,7 +1,12 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import type Swiper from "swiper";
+import type SwiperType from "swiper";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/free-mode";
 import styles from "./SwiperGallery.module.css";
 
 interface Photo {
@@ -18,19 +23,22 @@ export default function SwiperGallery({ id, photos }: Props) {
   const mainRef = useRef<HTMLDivElement>(null);
   const thumbsRef = useRef<HTMLDivElement>(null);
   const activeIndex = useRef(0);
+  const mainSwiperRef = useRef<SwiperType | null>(null);
+
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   useEffect(() => {
-    let mainSwiper: Swiper | null = null;
-    let thumbsSwiper: Swiper | null = null;
+    let mainSwiper: SwiperType | null = null;
+    let thumbsSwiper: SwiperType | null = null;
 
     async function init() {
       const { default: Swiper } = await import("swiper");
       const { Navigation, FreeMode } = await import("swiper/modules");
-      await import("swiper/css");
-      await import("swiper/css/navigation");
-      await import("swiper/css/free-mode");
 
       if (!mainRef.current) return;
+
+      await new Promise((r) => requestAnimationFrame(r));
 
       const isDesktop = window.innerWidth >= 1200;
 
@@ -65,10 +73,14 @@ export default function SwiperGallery({ id, photos }: Props) {
         loop: false,
         observer: true,
         observeParents: true,
+        observeSlideChildren: true,
         allowTouchMove: true,
         touchRatio: 1,
         threshold: 10,
       });
+
+      mainSwiperRef.current = mainSwiper;
+      requestAnimationFrame(() => mainSwiper?.update());
 
       if (thumbsRef.current) {
         const thumbSlides = thumbsRef.current.querySelectorAll(".swiper-slide");
@@ -95,10 +107,9 @@ export default function SwiperGallery({ id, photos }: Props) {
         });
 
         mainSwiper?.on("slideChange", () => {
-          if (mainSwiper) {
-            setActive(mainSwiper.activeIndex);
-          }
+          if (mainSwiper) setActive(mainSwiper.activeIndex);
         });
+
         setActive(0);
       }
     }
@@ -111,47 +122,82 @@ export default function SwiperGallery({ id, photos }: Props) {
     };
   }, [id]);
 
+  function handleMainSlideClick(index: number) {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  }
+
+  // Синхронізуємо swiper з лайтбоксом при закритті
+  function handleLightboxClose() {
+    setLightboxOpen(false);
+  }
+
+  // Коли лайтбокс змінює слайд — синхронізуємо свайпер
+  function handleLightboxView({ index }: { index: number }) {
+    mainSwiperRef.current?.slideTo(index);
+  }
+
+  const slides = photos.map((p) => ({ src: p.src, alt: p.alt }));
+
   return (
-    <div className={styles.gallery}>
-      {/* Main */}
-      <div ref={mainRef} className={`swiper ${styles.mainSwiper}`}>
-        <div className="swiper-wrapper">
-          {photos.map((photo, i) => (
-            <div key={i} className="swiper-slide">
-              <div className={styles.mainSlide}>
+    <>
+      <div className={styles.gallery}>
+        {/* Main Swiper */}
+        <div ref={mainRef} className={`swiper ${styles.mainSwiper}`}>
+          <div className="swiper-wrapper">
+            {photos.map((photo, i) => (
+              <div key={i} className="swiper-slide">
+                <div
+                  className={styles.mainSlide}
+                  onClick={() => handleMainSlideClick(i)}
+                  style={{ cursor: "zoom-in" }}
+                >
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 50vw"
+                    // style={{ objectFit: "cover" }}
+                    className={styles.mainImg}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="swiper-button-prev"></div>
+          <div className="swiper-button-next"></div>
+        </div>
+
+        {/* Thumbs Swiper */}
+        <div ref={thumbsRef} className={`swiper ${styles.thumbsSwiper}`}>
+          <div className="swiper-wrapper">
+            {photos.map((photo, i) => (
+              <div key={i} className={`swiper-slide ${styles.thumbSlide}`}>
                 <Image
                   src={photo.src}
                   alt={photo.alt}
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 50vw"
+                  sizes="120px"
                   style={{ objectFit: "cover" }}
-                  className={styles.mainImg}
+                  className={styles.thumbImg}
                 />
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-        <div className="swiper-button-prev"></div>
-        <div className="swiper-button-next"></div>
       </div>
 
-      {/* Thumbs */}
-      <div ref={thumbsRef} className={`swiper ${styles.thumbsSwiper}`}>
-        <div className="swiper-wrapper">
-          {photos.map((photo, i) => (
-            <div key={i} className={`swiper-slide ${styles.thumbSlide}`}>
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                sizes="120px"
-                style={{ objectFit: "cover" }}
-                className={styles.thumbImg}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+      {/* Lightbox */}
+      <Lightbox
+        open={lightboxOpen}
+        close={handleLightboxClose}
+        slides={slides}
+        index={lightboxIndex}
+        on={{ view: handleLightboxView }}
+        styles={{
+          container: { backgroundColor: "rgba(0,0,0,0.92)" },
+        }}
+      />
+    </>
   );
 }

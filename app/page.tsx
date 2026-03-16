@@ -9,6 +9,7 @@ import Faq from "@/components/sections/Faq";
 import Contacts from "@/components/sections/Contacts";
 import Partners from "@/components/sections/Partners";
 import ScrollTop from "@/components/ui/ScrollTop";
+import Animations from "@/components/ui/Animations";
 import Modal from "@/components/modals/Modal";
 
 export default function HomePage() {
@@ -27,6 +28,7 @@ export default function HomePage() {
         <Partners />
       </main>
       <ScrollTop />
+      <Animations />
       <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </>
   );

@@ -111,10 +111,6 @@ export default function BurgerMenu({ isOpen, onClose, onReserveClick }: Props) {
             ))}
           </ul>
 
-          <Link href="#" className={styles.reserveBtn} onClick={handleReserve}>
-            Забронювати
-          </Link>
-
           <ul className={styles.socials}>
             {socialLinks.map(({ href, icon, label }) => (
               <li key={label}>

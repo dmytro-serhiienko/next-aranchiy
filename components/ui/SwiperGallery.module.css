@@ -49,6 +49,8 @@
 
 .mainImg {
   user-select: none;
+  object-fit: contain;
+  object-position: top;
 }
 
 /* Nav arrows */
@@ -57,11 +59,12 @@
   --swiper-navigation-size: 11px;
   color: #fff;
   background: rgba(0, 0, 0, 0.45);
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   margin-top: -15px;
   transition: background 0.2s;
+  padding: 10px;
 }
 
 .mainSwiper :global(.swiper-button-prev) {

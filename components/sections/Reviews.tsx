@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useRef } from "react";
 import type SwiperType from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
 import Image from "next/image";
 import styles from "./Reviews.module.css";
 
@@ -61,8 +63,6 @@ export default function Reviews() {
     async function init() {
       const { default: Swiper } = await import("swiper");
       const { Pagination, Autoplay } = await import("swiper/modules");
-      await import("swiper/css");
-      await import("swiper/css/pagination");
 
       if (!swiperRef.current) return;
 

@@ -45,7 +45,6 @@ export default function WeddingModal() {
                 className={styles.reelsIframe}
                 frameBorder="0"
                 scrolling="no"
-                allowTransparency={true}
                 allowFullScreen={true}
               />
             </div>
