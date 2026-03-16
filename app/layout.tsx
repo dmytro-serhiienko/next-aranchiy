@@ -1,5 +1,28 @@
 import type { Metadata } from "next";
+import { Unbounded, Inter, Montserrat } from "next/font/google";
 import "../styles/globals.css";
+
+const unbounded = Unbounded({
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "700", "900"],
+  variable: "--font-unbounded",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin", "cyrillic"],
+  weight: ["300", "400"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin", "cyrillic"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Сергій Аранчій — Ведучий на весілля, корпоративи та івенти",
@@ -22,7 +45,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="uk" suppressHydrationWarning>
+    <html
+      lang="uk"
+      className={`${unbounded.variable} ${inter.variable} ${montserrat.variable}`}
+    >
       <head>
         <link
           rel="preload"
