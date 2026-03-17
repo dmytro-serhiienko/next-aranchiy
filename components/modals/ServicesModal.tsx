@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useRef } from "react";
 import styles from "./ServiceModal.module.css";
 import WeddingModal from "./service-modals/WeddingModal";
+import CorporateModal from "./service-modals/CorporateModal";
 
 interface Props {
   modalId: string | null;
@@ -18,7 +19,8 @@ function ModalContent({
   switch (modalId) {
     case "wedding":
       return <WeddingModal onIntroEnd={onIntroEnd} />;
-    // решту додамо пізніше
+    case "corporate":
+      return <CorporateModal onIntroEnd={onIntroEnd} />;
     default:
       return <p style={{ padding: 40 }}>Скоро буде...</p>;
   }
