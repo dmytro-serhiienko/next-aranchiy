@@ -1,17 +1,11 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
-import {
-  gender1Photos,
-  gender1Videos,
-  gender1Reels,
-  gender1Thanks,
-} from "./gender-data";
+import { gender1Photos, gender1Reels, gender1Thanks } from "./gender-data";
 import GenderIntro from "@/components/ui/GenderIntro";
 import SwiperGallery from "@/components/ui/SwiperGallery";
 import styles from "./WeddingModal.module.css";
-import videoStyles from "./GenderModal.module.css";
 
 interface Props {
   onIntroEnd?: () => void;
@@ -35,44 +29,22 @@ export default function GenderModal({ onIntroEnd }: Props) {
       <h2 className={styles.title}>Гендер паті</h2>
 
       <article className={styles.event}>
-        <h3 className={styles.eventTitle}>Особливий момент</h3>
+        <h3 className={styles.eventTitle}> It`s a BOY! 💙</h3>
         <p className={styles.eventDesc}>
-          It`s a BOY! 💙
-          <br /> Мить, коли час зупиняється, a повітря наповнюється блакитним
-          димом. Це була історія про очікування, щирі сльози радості та
-          неймовірну підтримку близьких. Цей день запам`ятається не лише
-          кольором конфеті, a справжнім вибухом емоцій. Попереду нова подорож,
-          сповнена драйву, сили та безмежного кохання. Ще один майбутній
-          захисник, ще одна велика історія.
+          Мить, коли час зупиняється, a повітря наповнюється блакитним димом. Це
+          була історія про очікування, щирі сльози радості та неймовірну
+          підтримку близьких. Цей день запам`ятається не лише кольором конфеті,
+          a справжнім вибухом емоцій. Попереду нова подорож, сповнена драйву,
+          сили та безмежного кохання. Ще один майбутній захисник, ще одна велика
+          історія.
         </p>
 
-        {/* Фото галерея */}
         <SwiperGallery id="swiper-gender-1" photos={gender1Photos} />
       </article>
 
-      {/* Відео */}
-      <div className={videoStyles.videos}>
-        <h2 className={videoStyles.videosTitle}>Моменти, що оживають</h2>
-        <div className={videoStyles.videosGrid}>
-          {gender1Videos.map((src, i) => (
-            <div key={i} className={videoStyles.videoItem}>
-              <video
-                src={src}
-                className={videoStyles.video}
-                controls
-                playsInline
-                muted
-                loop
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Reels */}
       {gender1Reels.length > 0 && (
         <div className={styles.reels}>
-          <h2 className={styles.reelsTitle}>Instagram Reels</h2>
+          <h2 className={styles.reelsTitle}>Моменти, що оживають</h2>
           <div className={styles.reelsGrid}>
             {gender1Reels.map((src, i) => (
               <div key={i} className={styles.reelsItem}>
@@ -89,33 +61,34 @@ export default function GenderModal({ onIntroEnd }: Props) {
         </div>
       )}
 
-      {/* Thanks */}
-      <div className={styles.thanks}>
-        <h2 className={styles.thanksTitle}>Творці атмосфери</h2>
-        <ul className={styles.thanksList}>
-          {gender1Thanks.map(({ handle, avatar }) => (
-            <li key={handle} className={styles.thanksItem}>
-              <Link
-                href={`https://www.instagram.com/${handle}/`}
-                className={styles.thanksCard}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className={styles.thanksAvatarWrap}>
-                  <Image
-                    src={avatar}
-                    alt={`@${handle}`}
-                    className={styles.thanksAvatar}
-                    width={64}
-                    height={64}
-                  />
-                </div>
-                <span className={styles.thanksName}>@{handle}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      {gender1Thanks.length > 0 && (
+        <div className={styles.thanks}>
+          <h2 className={styles.thanksTitle}>Творці атмосфери</h2>
+          <ul className={styles.thanksList}>
+            {gender1Thanks.map(({ handle, avatar }) => (
+              <li key={handle} className={styles.thanksItem}>
+                <Link
+                  href={`https://www.instagram.com/${handle}/`}
+                  className={styles.thanksCard}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className={styles.thanksAvatarWrap}>
+                    <Image
+                      src={avatar}
+                      alt={`@${handle}`}
+                      className={styles.thanksAvatar}
+                      width={64}
+                      height={64}
+                    />
+                  </div>
+                  <span className={styles.thanksName}>@{handle}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </>
   );
 }
