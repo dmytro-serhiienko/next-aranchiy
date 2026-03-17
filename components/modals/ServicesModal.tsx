@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef } from "react";
 import styles from "./ServiceModal.module.css";
 import WeddingModal from "./service-modals/WeddingModal";
 import CorporateModal from "./service-modals/CorporateModal";
+import GenderModal from "./service-modals/GenderModal";
 
 interface Props {
   modalId: string | null;
@@ -19,10 +20,14 @@ function ModalContent({
   switch (modalId) {
     case "wedding":
       return <WeddingModal onIntroEnd={onIntroEnd} />;
+
     case "corporate":
       return <CorporateModal onIntroEnd={onIntroEnd} />;
     default:
       return <p style={{ padding: 40 }}>Скоро буде...</p>;
+
+    case "gender":
+      return <GenderModal onIntroEnd={onIntroEnd} />;
   }
 }
 

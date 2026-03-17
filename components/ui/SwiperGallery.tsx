@@ -14,6 +14,12 @@ interface Photo {
   alt: string;
 }
 
+export interface MediaItem {
+  type?: "photo" | "video";
+  src: string;
+  alt?: string;
+}
+
 interface Props {
   id: string;
   photos: Photo[];
