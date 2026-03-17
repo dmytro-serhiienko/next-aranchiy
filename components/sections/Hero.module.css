@@ -207,14 +207,15 @@
   }
 
   .heroRight {
-    width: 47%;
-    height: 100%; /* Повертаємо 100%, щоб не "вилітало" за межі */
-
+    width: 60%;
+    height: 110%;
+    right: -7%;
     z-index: 11;
   }
 
   .heroImgMain {
-    object-position: center bottom !important;
+    object-fit: contain !important;
+    object-position: bottom center !important;
   }
 
   .heroLeft {

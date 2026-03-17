@@ -36,7 +36,6 @@ export default function Hero() {
             priority
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 65vw, 60vw"
-            style={{ objectFit: "contain", objectPosition: "center top" }}
           />
         </div>
 
