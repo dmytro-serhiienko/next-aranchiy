@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import styles from "./ServiceModal.module.css";
 import WeddingModal from "./service-modals/WeddingModal";
 
@@ -8,10 +8,16 @@ interface Props {
   onClose: () => void;
 }
 
-function ModalContent({ modalId }: { modalId: string }) {
+function ModalContent({
+  modalId,
+  onIntroEnd,
+}: {
+  modalId: string;
+  onIntroEnd: () => void;
+}) {
   switch (modalId) {
     case "wedding":
-      return <WeddingModal />;
+      return <WeddingModal onIntroEnd={onIntroEnd} />;
     // решту додамо пізніше
     default:
       return <p style={{ padding: 40 }}>Скоро буде...</p>;
@@ -20,6 +26,17 @@ function ModalContent({ modalId }: { modalId: string }) {
 
 export default function ServiceModal({ modalId, onClose }: Props) {
   const isOpen = !!modalId;
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  const resetScroll = useCallback(() => {
+    if (panelRef.current) panelRef.current.scrollTop = 0;
+  }, []);
+
+  useEffect(() => {
+    if (isOpen && panelRef.current) {
+      panelRef.current.scrollTop = 0;
+    }
+  }, [isOpen, modalId]);
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -41,12 +58,12 @@ export default function ServiceModal({ modalId, onClose }: Props) {
   return (
     <div className={styles.modal} role="dialog" aria-modal={true}>
       <div className={styles.overlay} onClick={onClose} />
-      <div className={styles.panel}>
+      <div className={styles.panel} ref={panelRef}>
         <button className={styles.close} onClick={onClose} aria-label="Закрити">
           <i className="ri-close-line" aria-hidden="true" />
         </button>
         <div className={styles.inner}>
-          <ModalContent modalId={modalId} />
+          <ModalContent modalId={modalId} onIntroEnd={resetScroll} />
         </div>
       </div>
     </div>

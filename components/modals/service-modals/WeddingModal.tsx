@@ -15,13 +15,20 @@ import WeddingIntro from "@/components/ui/WeddingIntro";
 import SwiperGallery from "@/components/ui/SwiperGallery";
 import styles from "./WeddingModal.module.css";
 
-export default function WeddingModal() {
+interface Props {
+  onIntroEnd?: () => void;
+}
+
+export default function WeddingModal({ onIntroEnd }: Props) {
   const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowIntro(false), 3200);
+    const timer = setTimeout(() => {
+      setShowIntro(false);
+      onIntroEnd?.();
+    }, 3200);
     return () => clearTimeout(timer);
-  }, []);
+  }, [onIntroEnd]);
 
   return (
     <>
@@ -90,7 +97,6 @@ export default function WeddingModal() {
       </div>
 
       {/* ВЕСІЛЛЯ 2 */}
-
       <article className={styles.event}>
         <h3
           className={styles.eventTitle}
