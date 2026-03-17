@@ -39,53 +39,13 @@ export default function Modal({ isOpen, onClose }: Props) {
     values: typeof initialValues,
     { resetForm }: FormikHelpers<typeof initialValues>,
   ) {
-    if (!values.name.trim()) {
-      toast.error("Будь ласка, вкажіть ваше ім'я");
-      return;
-    }
-    if (!values.phone.trim()) {
-      toast.error("Будь ласка, вкажіть номер телефону");
-      return;
-    }
-    if (!values.date) {
-      toast.error("Будь ласка, вкажіть дату заходу");
-      return;
-    }
-
-    const TG_TOKEN = process.env.NEXT_PUBLIC_TELEGRAM_TOKEN;
-    const TG_CHAT = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID;
-    const EMAIL_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
-
-    let message = `<b>🚀 Нова заявка!</b>\n\n`;
-    message += `👤 <b>Ім'я:</b> ${values.name || "Не вказано"}\n`;
-    message += `📞 <b>Телефон:</b> ${values.phone || "Не вказано"}\n`;
-    message += `📅 <b>Дата:</b> ${values.date || "Не вказано"}\n`;
-    message += `🎭 <b>Захід:</b> ${values.type || "—"}\n`;
-    message += `📍 <b>Місто:</b> ${values.city || "—"}`;
-
-    const formData = new FormData();
-    Object.entries(values).forEach(([k, v]) => formData.append(k, v));
-    formData.append("access_key", EMAIL_KEY!);
-    formData.append("subject", "Нове замовлення з сайту");
-    formData.append("from_name", "Бот Сайту");
-
     await toast.promise(
-      Promise.all([
-        fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            chat_id: TG_CHAT,
-            parse_mode: "html",
-            text: message,
-          }),
-        }),
-        fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          body: formData,
-        }),
-      ]).then(([tgRes, emailRes]) => {
-        if (!tgRes.ok || !emailRes.ok) throw new Error("Помилка відправки");
+      fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      }).then((res) => {
+        if (!res.ok) throw new Error("Помилка відправки");
       }),
       {
         loading: "Відправляємо заявку...",
@@ -129,7 +89,7 @@ export default function Modal({ isOpen, onClose }: Props) {
 
         <Formik initialValues={initialValues} onSubmit={handleSubmit}>
           {({ isSubmitting }) => (
-            <Form className={styles.modalForm} noValidate>
+            <Form className={styles.modalForm}>
               <div className={styles.formGroup}>
                 <label className={styles.formLabel} htmlFor="form-name">
                   Імʼя
