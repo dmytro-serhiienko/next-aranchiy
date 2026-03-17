@@ -129,6 +129,11 @@ export const wedding2Photos = [
   "2.40",
   "2.41",
   "2.42",
+  "2.43",
+  "2.44",
+  "2.45",
+  "2.46",
+  "2.47",
 ].map((name) => ({
   src: `/img/services/wedding2/${name}.jpg`,
   alt: "Весілля Максима та Олександри",
