@@ -9,9 +9,14 @@ const partners = [
     alt: "Партнер Treskare",
   },
   {
-    href: "https://www.instagram.com/space__transfer?igsh=MTB0a3F3NnR2bzFmNA%3D%3D",
+    href: "https://www.instagram.com/space__transfer",
     src: "/img/partners/spacetransfer.png",
     alt: "Партнер Space Transfer",
+  },
+  {
+    href: "https://www.instagram.com/ministry.of.flovers",
+    src: "/img/partners/ministriFlowers.png",
+    alt: "Партнер Ministry of flovers",
   },
   {
     href: "https://www.instagram.com/morkviana_mariana/?hl=uk",

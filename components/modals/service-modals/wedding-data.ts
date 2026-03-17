@@ -1,3 +1,4 @@
+// ! WEDDING 1
 export const wedding1Photos = [
   "IMG_0738",
   "IMG_0696",
@@ -83,9 +84,9 @@ export const wedding1Thanks = [
     avatar: "/img/services/wedding1/insta-photo/ekorest.yavir.jpg",
   },
 ];
+// !
 
 // ! WEDDING 2
-
 export const wedding2Photos = [
   "2.1",
   "2.8",
@@ -146,43 +147,24 @@ export const wedding2Reels = [
 
 export const wedding2Thanks = [
   {
-    handle: "ekateryna.yuskova",
-    avatar: "/img/services/wedding1/insta-photo/eka.jpg",
+    handle: "mkutsel.001",
+    avatar: "/img/services/wedding2/insta-photo/mkutsel.jpg",
   },
   {
-    handle: "sashok0020",
-    avatar: "/img/services/wedding1/insta-photo/sashok0020.jpg",
+    handle: "s.kutsel_",
+    avatar: "/img/services/wedding2/insta-photo/skutsel.jpg",
   },
   {
-    handle: "tsapuk_decor",
-    avatar: "/img/services/wedding1/insta-photo/tsapuk_decor.jpg",
-  },
-  {
-    handle: "andriy_medvediuk",
-    avatar: "/img/services/wedding1/insta-photo/andriy_medvediuk.jpg",
-  },
-  {
-    handle: "dariy_jeey_dj",
-    avatar: "/img/services/wedding1/insta-photo/dariy_jeey_dj.jpg",
-  },
-  {
-    handle: "dj.van.bit",
-    avatar: "/img/services/wedding1/insta-photo/dj.van.bit.jpg",
-  },
-  {
-    handle: "maxeffect_rent",
-    avatar: "/img/services/wedding1/insta-photo/maxeffect_rent.jpg",
+    handle: "osnovianenko",
+    avatar: "/img/services/wedding2/insta-photo/osno.jpg",
   },
   {
     handle: "olena_polityka",
     avatar: "/img/services/wedding1/insta-photo/olena_polityka.jpg",
   },
   {
-    handle: "tsapuk_agency",
-    avatar: "/img/services/wedding1/insta-photo/tsapuk_agency.jpg",
-  },
-  {
-    handle: "ekorest.yavir",
-    avatar: "/img/services/wedding1/insta-photo/ekorest.yavir.jpg",
+    handle: "dj.lastivka",
+    avatar: "/img/services/wedding2/insta-photo/lastivka.jpg",
   },
 ];
+// !
