@@ -168,3 +168,66 @@ export const wedding2Thanks = [
   },
 ];
 // !
+
+// ! WEDDING 3
+export const wedding3Photos = [
+  "3.1",
+  "3.2",
+  "3.3",
+  "3.4",
+  "3.5",
+  "3.6",
+  "3.7",
+  "3.8",
+  "3.9",
+  "3.10",
+  "3.11",
+  "3.12",
+  "3.13",
+  "3.14",
+  "3.15",
+  "3.16",
+  "3.17",
+  "3.18",
+].map((name) => ({
+  src: `/img/services/wedding3/${name}.jpg`,
+  alt: "Весілля Дмитра та Наталії",
+}));
+
+export const wedding3Reels = [
+  "https://www.instagram.com/reel/DQ67uzciBQZ/embed/captioned/",
+  "https://www.instagram.com/reel/DQ4TXYvDAaZ/embed/captioned/",
+];
+
+export const wedding3Thanks = [
+  {
+    handle: "_dimulkaa",
+    avatar: "/img/services/wedding3/insta-photo/dimulkaa.jpg",
+  },
+  {
+    handle: "_.natalishaaa._",
+    avatar: "/img/services/wedding3/insta-photo/natalishaaa.jpg",
+  },
+  {
+    handle: "valeriy.west",
+    avatar: "/img/services/wedding3/insta-photo/valeriywest.jpg",
+  },
+  {
+    handle: "olena_polityka",
+    avatar: "/img/services/wedding1/insta-photo/olena_polityka.jpg",
+  },
+  {
+    handle: "zhenia_levchuk",
+    avatar: "/img/services/wedding3/insta-photo/zhenialevchuk.jpg",
+  },
+
+  {
+    handle: "sweet.decor.rivne",
+    avatar: "/img/services/wedding3/insta-photo/sweetdecorrivne.jpg",
+  },
+  {
+    handle: "sofia.rivne",
+    avatar: "/img/services/wedding3/insta-photo/sofiarivne.jpg",
+  },
+];
+// !

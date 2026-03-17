@@ -9,6 +9,9 @@ import {
   wedding2Photos,
   wedding2Reels,
   wedding2Thanks,
+  wedding3Photos,
+  wedding3Reels,
+  wedding3Thanks,
 } from "./wedding-data";
 
 import WeddingIntro from "@/components/ui/WeddingIntro";
@@ -140,6 +143,73 @@ export default function WeddingModal({ onIntroEnd }: Props) {
         <h2 className={styles.thanksTitle}>Творці атмосфери</h2>
         <ul className={styles.thanksList}>
           {wedding2Thanks.map(({ handle, avatar }) => (
+            <li key={handle} className={styles.thanksItem}>
+              <Link
+                href={`https://www.instagram.com/${handle}/`}
+                className={styles.thanksCard}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className={styles.thanksAvatarWrap}>
+                  <Image
+                    src={avatar}
+                    alt={`@${handle}`}
+                    className={styles.thanksAvatar}
+                    width={64}
+                    height={64}
+                  />
+                </div>
+                <span className={styles.thanksName}>@{handle}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* ВЕСІЛЛЯ 3 */}
+      <article className={styles.event}>
+        <h3
+          className={styles.eventTitle}
+          style={{
+            marginTop: "50px",
+            borderTop: "1px solid rgba(0, 0, 0, 0.08)",
+            paddingTop: "50px",
+          }}
+        >
+          Дмитро та Наталія
+        </h3>
+        <p className={styles.eventDesc}>
+          Це весілля — ідеальний приклад того, як сучасна класика оживає завдяки
+          правильній атмосфері. Білосніжний мінімалізм у декорі став лише фоном
+          для головного — щирої енергії та емоцій, що зашкалювали.
+        </p>
+
+        <SwiperGallery id="swiper-wedding-3" photos={wedding3Photos} />
+      </article>
+
+      {/* Reels */}
+      <div className={styles.reels}>
+        <h2 className={styles.reelsTitle}>Моменти, що оживають</h2>
+        <div className={styles.reelsGrid}>
+          {wedding3Reels.map((src, i) => (
+            <div key={i} className={styles.reelsItem}>
+              <iframe
+                src={src}
+                className={styles.reelsIframe}
+                frameBorder="0"
+                scrolling="no"
+                allowFullScreen={true}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Thanks */}
+      <div className={styles.thanks}>
+        <h2 className={styles.thanksTitle}>Творці атмосфери</h2>
+        <ul className={styles.thanksList}>
+          {wedding3Thanks.map(({ handle, avatar }) => (
             <li key={handle} className={styles.thanksItem}>
               <Link
                 href={`https://www.instagram.com/${handle}/`}
