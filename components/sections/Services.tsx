@@ -4,7 +4,7 @@ import styles from "./Services.module.css";
 import ServiceModal from "@/components/modals/ServicesModal";
 
 const cards = [
-  { id: "wedding", icon: "ri-diamond-ring-line", name: "Весілля" },
+  { id: "wedding", icon: "ri-vip-diamond-line", name: "Весілля" },
   { id: "corporate", icon: "ri-building-2-line", name: "Корпоративні заходи" },
   { id: "gender", icon: "ri-genderless-line", name: "Гендер паті" },
   { id: "birthday", icon: "ri-cake-2-line", name: "Дні народження" },

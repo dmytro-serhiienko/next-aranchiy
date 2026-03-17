@@ -96,7 +96,7 @@ export default function WeddingModal() {
           className={styles.eventTitle}
           style={{
             marginTop: "50px",
-            borderTop: "1px solid black",
+            borderTop: "1px solid rgba(0, 0, 0, 0.08)",
             paddingTop: "50px",
           }}
         >

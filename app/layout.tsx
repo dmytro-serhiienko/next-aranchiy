@@ -46,16 +46,11 @@ export default function RootLayout({
 }) {
   return (
     <html
+      suppressHydrationWarning
       lang="uk"
       className={`${unbounded.variable} ${inter.variable} ${montserrat.variable}`}
     >
       <head>
-        <link
-          rel="preload"
-          as="image"
-          href="/img/hero/hero-bg.png"
-          fetchPriority="high"
-        />
         <link rel="icon" href="/img/favicon/favicon.png" type="image/png" />
         <link
           rel="stylesheet"

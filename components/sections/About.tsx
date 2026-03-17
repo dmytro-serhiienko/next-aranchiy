@@ -21,8 +21,8 @@ export default function About() {
               src="/img/about/about-1.jpg"
               alt="Ведучий"
               className={`${styles.image} ${styles.imgFirst}`}
-              width={480}
-              height={380}
+              fill
+              sizes="(max-width: 767px) 100vw, (max-width: 1199px) 480px, 45vw"
             />
           </div>
           <div className={styles.textBlock}>
@@ -49,8 +49,8 @@ export default function About() {
               src="/img/about/about-2.jpg"
               alt="Ведучий на заході"
               className={`${styles.image} ${styles.imgSecond}`}
-              width={480}
-              height={380}
+              fill
+              sizes="(max-width: 767px) 100vw, (max-width: 1199px) 480px, 45vw"
             />
           </div>
         </div>
