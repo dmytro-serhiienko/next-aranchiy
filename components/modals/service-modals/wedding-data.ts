@@ -87,8 +87,8 @@ export const wedding1Thanks = [
 // ! WEDDING 2
 
 export const wedding2Photos = [
-  "2.8",
   "2.1",
+  "2.8",
   "2.2",
   "2.3",
   "2.4",
