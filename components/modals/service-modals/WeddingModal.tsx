@@ -262,7 +262,7 @@ export default function WeddingModal({ onIntroEnd }: Props) {
           стали, то не тому що треба, а тому що інакше вже не хочеться.
         </p>
 
-        <SwiperGallery id="swiper-wedding-3" photos={wedding4Photos} />
+        <SwiperGallery id="swiper-wedding-4" photos={wedding4Photos} />
       </article>
 
       {/* Reels */}
