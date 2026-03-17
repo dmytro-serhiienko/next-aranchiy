@@ -9,6 +9,11 @@ const partners = [
     alt: "Партнер Treskare",
   },
   {
+    href: "https://www.instagram.com/space__transfer?igsh=MTB0a3F3NnR2bzFmNA%3D%3D",
+    src: "/img/partners/spacetransfer.png",
+    alt: "Партнер Space Transfer",
+  },
+  {
     href: "https://www.instagram.com/morkviana_mariana/?hl=uk",
     src: "/img/partners/morkviana.png",
     alt: "Партнер Морквяна",
@@ -22,6 +27,11 @@ const partners = [
     href: "https://www.instagram.com/bebeauty_top100/?hl=uk",
     src: "/img/partners/be-beauty.png",
     alt: "Салон BeBeauty",
+  },
+  {
+    href: "https://www.instagram.com/sembus_ua?igsh=bmlscml0eTF2dDMz",
+    src: "/img/partners/sembus.png",
+    alt: "Партнер Sem Bus",
   },
   {
     href: "https://www.metalista.com.ua/",
