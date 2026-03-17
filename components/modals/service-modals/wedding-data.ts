@@ -231,3 +231,55 @@ export const wedding3Thanks = [
   },
 ];
 // !
+
+// ! WEDDING 4
+export const wedding4Photos = [
+  "4.1",
+  "4.2",
+  "4.3",
+  "4.4",
+  "4.5",
+  "4.6",
+  "4.7",
+  "4.8",
+  "4.9",
+  "4.10",
+  "4.11",
+  "4.12",
+].map((name) => ({
+  src: `/img/services/wedding4/${name}.jpg`,
+  alt: "Весілля Владислава та Соні",
+}));
+
+export const wedding4Reels = [
+  "https://www.instagram.com/reel/DMLM-OXCZ4L/embed/captioned/",
+];
+
+export const wedding4Thanks = [
+  {
+    handle: "_vlad_usyk_",
+    avatar: "/img/services/wedding4/insta-photo/vladusyk.jpg",
+  },
+  {
+    handle: "sonyaaa.o",
+    avatar: "/img/services/wedding4/insta-photo/sonyaaa.jpg",
+  },
+  {
+    handle: "sribni_leleky",
+    avatar: "/img/services/wedding4/insta-photo/sribnileleky.jpg",
+  },
+  {
+    handle: "oleg_matviiuk",
+    avatar: "/img/services/wedding4/insta-photo/olegmatviiuk.jpg",
+  },
+  {
+    handle: "olena_polityka",
+    avatar: "/img/services/wedding1/insta-photo/olena_polityka.jpg",
+  },
+
+  {
+    handle: "inna_bondar_decor",
+    avatar: "/img/services/wedding4/insta-photo/innabondardecor.jpg",
+  },
+];
+// !
