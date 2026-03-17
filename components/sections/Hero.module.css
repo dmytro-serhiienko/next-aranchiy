@@ -4,7 +4,7 @@
   flex-direction: column;
   background: linear-gradient(150deg, #c29b6c, #bb936b, #8d6b4a);
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /* Критично для деплою, щоб нічого не вилазило */
 }
 
 .heroBgText {
@@ -29,16 +29,25 @@
   height: 100%;
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
 }
 
 .heroRight {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  left: -10%;
+  right: 0;
+  bottom: 0; /* Притискаємо до самого низу */
+  top: auto;
+  width: 120%;
+  height: 120%; /* На мобільних фото займає 70% висоти знизу */
+  z-index: 2;
+  pointer-events: none;
 }
 
 .heroImgMain {
+  object-fit: contain !important; /* На мобільних contain краще, щоб не різало голову */
+  object-position: bottom center !important;
   filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.35))
     drop-shadow(0 4px 20px rgba(0, 0, 0, 0.18));
 }
@@ -49,14 +58,23 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 90px 20px 20px;
+  padding: 90px 20px 40px; /* Трохи більше падінгу знизу */
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.32) 0%,
+    rgba(0, 0, 0, 0.35) 0%,
     transparent 40%,
-    transparent 60%,
-    rgba(0, 0, 0, 0.55) 100%
+    transparent 70%,
+    rgba(0, 0, 0, 0.4) 100%
   );
+  z-index: 4; /* Текст завжди над фото */
+  pointer-events: none; /* Щоб можна було "крізь" текст натиснути на щось, якщо треба */
+}
+
+/* Дозволяємо клікати на посилання та кнопки */
+.heroTop,
+.heroBottom,
+.heroSocialLink {
+  pointer-events: auto;
 }
 
 .heroTop {
@@ -86,22 +104,17 @@
 .heroSocials {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .heroSocialLink {
-  font-size: 22px;
-  color: rgba(240, 237, 232, 0.75);
+  font-size: 24px;
+  color: rgba(240, 237, 232, 0.9);
   transition: all 0.3s ease;
   display: block;
-}
-
-.heroSocialLink:hover {
-  color: #f0ede8;
-  transform: translateX(3px);
 }
 
 .heroTitleWrapper {
@@ -114,17 +127,17 @@
 
 .heroName {
   font-family: "Unbounded", sans-serif;
-  font-size: clamp(30px, 3vw, 70px);
+  font-size: clamp(24px, 7vw, 40px);
   font-weight: 400;
   text-transform: uppercase;
   color: #fff;
   letter-spacing: 2px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .heroSurname {
   font-family: "Unbounded", sans-serif;
-  font-size: clamp(50px, 11vw, 70px);
+  font-size: clamp(40px, 12vw, 80px);
   font-weight: 900;
   text-transform: uppercase;
   color: #fff;
@@ -132,39 +145,33 @@
   line-height: 0.9;
 }
 
+/* TABLET */
 @media (min-width: 768px) {
   .heroBgText {
     top: 50%;
     left: 60%;
-    transform: translate(-50%, -50%);
     font-size: 29vw;
   }
 
   .heroRight {
-    position: absolute;
-    inset: 0;
+    height: 100%;
+    width: 65%;
     left: auto;
     right: 0;
-    width: 65%;
-    height: 100%;
+  }
+
+  .heroImgMain {
+    object-fit: cover !important;
+    object-position: center top !important;
   }
 
   .heroLeft {
     padding: 120px 40px 40px;
-    background:
-      linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.55) 0%,
-        rgba(0, 0, 0, 0.35) 45%,
-        transparent 75%
-      ),
-      linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.1) 0%,
-        transparent 30%,
-        transparent 70%,
-        rgba(0, 0, 0, 0.2) 100%
-      );
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.5) 0%,
+      transparent 70%
+    );
   }
 
   .heroTop {
@@ -174,7 +181,6 @@
   .heroDescrBold {
     text-align: left;
     max-width: 45%;
-    font-size: clamp(22px, 3.5vw, 36px);
   }
 
   .heroBottom {
@@ -185,113 +191,42 @@
 
   .heroSocials {
     flex-direction: row;
-    gap: 18px;
     order: 2;
-  }
-
-  .heroSocialLink {
-    font-size: 26px;
   }
 
   .heroTitleWrapper {
     align-items: flex-start;
     order: 1;
   }
-
-  .heroName {
-    font-size: clamp(20px, 2.8vw, 32px);
-    letter-spacing: 3px;
-    margin-bottom: 6px;
-  }
-
-  .heroSurname {
-    font-size: clamp(52px, 9vw, 90px);
-    letter-spacing: -2px;
-  }
 }
 
+/* DESKTOP */
 @media (min-width: 1200px) {
   .heroBgText {
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 29vw;
   }
 
-  /*! Фото бек */
   .heroRight {
-    position: absolute;
-    right: 0%;
-    bottom: -10px;
-    width: 50%;
-    height: 100%;
-    top: auto;
-    left: auto;
-    z-index: 3;
+    width: 47%;
+    height: 100%; /* Повертаємо 100%, щоб не "вилітало" за межі */
+
+    z-index: 11;
   }
 
   .heroImgMain {
     object-position: center bottom !important;
-    filter: drop-shadow(0 24px 55px rgba(0, 0, 0, 0.35))
-      drop-shadow(0 4px 55px rgba(0, 0, 0, 0.18));
   }
 
   .heroLeft {
     padding: 140px 60px 60px 80px;
-    background: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.45) 0%,
-      rgba(0, 0, 0, 0.2) 50%,
-      transparent 75%
-    );
-    z-index: 2;
-  }
-
-  .heroTop {
-    justify-content: flex-start;
-  }
-
-  .heroDescrBold {
-    text-align: left;
-    max-width: 420px;
-    font-size: clamp(18px, 2vw, 28px);
-    line-height: 1.3;
-  }
-
-  .heroBottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  .heroTitleWrapper {
-    align-items: flex-start;
-    order: 1;
-    position: relative;
-    z-index: 1;
+    z-index: 4;
   }
 
   .heroName {
     font-size: clamp(28px, 3vw, 48px);
-    letter-spacing: 4px;
-    margin-bottom: 8px;
   }
 
   .heroSurname {
     font-size: clamp(80px, 10vw, 160px);
-    letter-spacing: -4px;
-    line-height: 0.85;
-    white-space: nowrap;
-    position: relative;
-  }
-
-  .heroSocials {
-    flex-direction: row;
-    gap: 20px;
-    order: 2;
-  }
-
-  .heroSocialLink {
-    font-size: 28px;
   }
 }
