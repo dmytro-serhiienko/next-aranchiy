@@ -1,5 +1,7 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import { Formik, Form, Field, FormikHelpers } from "formik";
+import toast from "react-hot-toast";
 import styles from "./Modal.module.css";
 
 interface Props {
@@ -7,11 +9,16 @@ interface Props {
   onClose: () => void;
 }
 
+const initialValues = {
+  name: "",
+  phone: "",
+  date: "",
+  type: "",
+  city: "",
+};
+
 export default function Modal({ isOpen, onClose }: Props) {
   const overlayRef = useRef<HTMLDivElement>(null);
-  const [btnState, setBtnState] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -28,30 +35,42 @@ export default function Modal({ isOpen, onClose }: Props) {
     };
   }, [isOpen]);
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const formData = new FormData(form);
+  async function handleSubmit(
+    values: typeof initialValues,
+    { resetForm }: FormikHelpers<typeof initialValues>,
+  ) {
+    if (!values.name.trim()) {
+      toast.error("Будь ласка, вкажіть ваше ім'я");
+      return;
+    }
+    if (!values.phone.trim()) {
+      toast.error("Будь ласка, вкажіть номер телефону");
+      return;
+    }
+    if (!values.date) {
+      toast.error("Будь ласка, вкажіть дату заходу");
+      return;
+    }
 
     const TG_TOKEN = process.env.NEXT_PUBLIC_TELEGRAM_TOKEN;
     const TG_CHAT = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID;
     const EMAIL_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
 
     let message = `<b>🚀 Нова заявка!</b>\n\n`;
-    message += `👤 <b>Ім'я:</b> ${formData.get("name") || "Не вказано"}\n`;
-    message += `📞 <b>Телефон:</b> ${formData.get("phone") || "Не вказано"}\n`;
-    message += `📅 <b>Дата:</b> ${formData.get("date") || "Не вказано"}\n`;
-    message += `🎭 <b>Захід:</b> ${formData.get("type") || "—"}\n`;
-    message += `📍 <b>Місто:</b> ${formData.get("city") || "—"}`;
+    message += `👤 <b>Ім'я:</b> ${values.name || "Не вказано"}\n`;
+    message += `📞 <b>Телефон:</b> ${values.phone || "Не вказано"}\n`;
+    message += `📅 <b>Дата:</b> ${values.date || "Не вказано"}\n`;
+    message += `🎭 <b>Захід:</b> ${values.type || "—"}\n`;
+    message += `📍 <b>Місто:</b> ${values.city || "—"}`;
 
+    const formData = new FormData();
+    Object.entries(values).forEach(([k, v]) => formData.append(k, v));
     formData.append("access_key", EMAIL_KEY!);
     formData.append("subject", "Нове замовлення з сайту");
     formData.append("from_name", "Бот Сайту");
 
-    setBtnState("loading");
-
-    try {
-      const [tgRes, emailRes] = await Promise.all([
+    await toast.promise(
+      Promise.all([
         fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -65,38 +84,19 @@ export default function Modal({ isOpen, onClose }: Props) {
           method: "POST",
           body: formData,
         }),
-      ]);
+      ]).then(([tgRes, emailRes]) => {
+        if (!tgRes.ok || !emailRes.ok) throw new Error("Помилка відправки");
+      }),
+      {
+        loading: "Відправляємо заявку...",
+        success: "Заявку відправлено! Я зв'яжусь з вами найближчим часом 🎉",
+        error: "Помилка відправки. Спробуйте ще раз ❌",
+      },
+    );
 
-      if (tgRes.ok && emailRes.ok) {
-        setBtnState("success");
-        setTimeout(() => {
-          onClose();
-          form.reset();
-          setBtnState("idle");
-        }, 2000);
-      } else {
-        throw new Error("Помилка при відправці");
-      }
-    } catch (err) {
-      console.error(err);
-      setBtnState("error");
-      setTimeout(() => setBtnState("idle"), 3000);
-    }
+    resetForm();
+    onClose();
   }
-
-  const btnLabel = {
-    idle: "Відправити заявку",
-    loading: "Відправка...",
-    success: "Відправлено ✓",
-    error: "Помилка ❌",
-  }[btnState];
-
-  const btnStyle = {
-    idle: {},
-    loading: {},
-    success: { backgroundColor: "rgba(40, 167, 69, 0.8)" },
-    error: { backgroundColor: "rgba(220, 53, 69, 0.8)" },
-  }[btnState];
 
   return (
     <div
@@ -127,89 +127,94 @@ export default function Modal({ isOpen, onClose }: Props) {
           Заповніть форму — я звʼяжусь з вами найближчим часом
         </p>
 
-        <form className={styles.modalForm} onSubmit={handleSubmit}>
-          <div className={styles.formGroup}>
-            <label className={styles.formLabel} htmlFor="form-name">
-              Імʼя
-            </label>
-            <input
-              id="form-name"
-              type="text"
-              name="name"
-              className={styles.formInput}
-              placeholder="Ваше ім'я"
-              required
-              autoComplete="name"
-            />
-          </div>
+        <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+          {({ isSubmitting }) => (
+            <Form className={styles.modalForm} noValidate>
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel} htmlFor="form-name">
+                  Імʼя
+                </label>
+                <Field
+                  id="form-name"
+                  name="name"
+                  type="text"
+                  className={styles.formInput}
+                  placeholder="Ваше ім'я"
+                  required
+                  autoComplete="name"
+                />
+              </div>
 
-          <div className={styles.formGroup}>
-            <label className={styles.formLabel} htmlFor="form-phone">
-              Телефон
-            </label>
-            <input
-              id="form-phone"
-              type="tel"
-              name="phone"
-              className={styles.formInput}
-              placeholder="+38 (0XX) XXX-XX-XX"
-              required
-              autoComplete="tel"
-            />
-          </div>
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel} htmlFor="form-phone">
+                  Телефон
+                </label>
+                <Field
+                  id="form-phone"
+                  name="phone"
+                  type="tel"
+                  className={styles.formInput}
+                  placeholder="+38 (0XX) XXX-XX-XX"
+                  required
+                  autoComplete="tel"
+                />
+              </div>
 
-          <div className={styles.formGroup}>
-            <label className={styles.formLabel} htmlFor="form-date">
-              Дата заходу
-            </label>
-            <input
-              id="form-date"
-              type="date"
-              name="date"
-              className={`${styles.formInput} ${styles.formInputDate}`}
-              required
-            />
-          </div>
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel} htmlFor="form-date">
+                  Дата заходу
+                </label>
+                <Field
+                  id="form-date"
+                  name="date"
+                  type="date"
+                  className={`${styles.formInput} ${styles.formInputDate}`}
+                  required
+                />
+              </div>
 
-          <div className={styles.formGroup}>
-            <label className={styles.formLabel} htmlFor="form-type">
-              Тип заходу
-            </label>
-            <input
-              id="form-type"
-              type="text"
-              name="type"
-              className={styles.formInput}
-              placeholder="Весілля, корпоратив, день народження..."
-            />
-          </div>
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel} htmlFor="form-type">
+                  Тип заходу
+                </label>
+                <Field
+                  id="form-type"
+                  name="type"
+                  type="text"
+                  className={styles.formInput}
+                  placeholder="Весілля, корпоратив, день народження..."
+                />
+              </div>
 
-          <div className={styles.formGroup}>
-            <label className={styles.formLabel} htmlFor="form-city">
-              Місто
-            </label>
-            <input
-              id="form-city"
-              type="text"
-              name="city"
-              className={styles.formInput}
-              placeholder="Наприклад, Київ"
-              autoComplete="address-level2"
-            />
-          </div>
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel} htmlFor="form-city">
+                  Місто
+                </label>
+                <Field
+                  id="form-city"
+                  name="city"
+                  type="text"
+                  className={styles.formInput}
+                  placeholder="Наприклад, Рівне"
+                  autoComplete="address-level2"
+                />
+              </div>
 
-          <button
-            type="submit"
-            className={styles.btnSubmit}
-            disabled={btnState === "loading"}
-            style={btnStyle}
-          >
-            <span>{btnLabel}</span>
-            {btnState === "idle" && (
-              <i className="ri-send-plane-line" aria-hidden="true" />
-            )}
-          </button>
-        </form>
+              <button
+                type="submit"
+                className={styles.btnSubmit}
+                disabled={isSubmitting}
+              >
+                <span>
+                  {isSubmitting ? "Відправка..." : "Відправити заявку"}
+                </span>
+                {!isSubmitting && (
+                  <i className="ri-send-plane-line" aria-hidden="true" />
+                )}
+              </button>
+            </Form>
+          )}
+        </Formik>
       </div>
     </div>
   );

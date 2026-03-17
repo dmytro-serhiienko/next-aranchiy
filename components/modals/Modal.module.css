@@ -156,6 +156,13 @@
   gap: 16px;
 }
 
+.fieldError {
+  font-size: 11px;
+  color: #e53935;
+  /* margin-top: 4px; */
+  font-family: var(--font-inter), sans-serif;
+}
+
 @media (min-width: 1200px) {
   .modal {
     padding: 48px 40px;
