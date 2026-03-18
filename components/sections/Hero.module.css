@@ -10,7 +10,7 @@
 .heroBgText {
   position: absolute;
   top: 34%;
-  left: 50%;
+  left: 180%;
   transform: translate(-50%, -50%);
   font-family: "Unbounded", sans-serif;
   font-weight: 900;
@@ -35,18 +35,18 @@
 
 .heroRight {
   position: absolute;
-  left: -10%;
+  left: 7%;
   right: 0;
-  bottom: 0; /* Притискаємо до самого низу */
+  bottom: 0;
   top: auto;
-  width: 120%;
-  height: 120%; /* На мобільних фото займає 70% висоти знизу */
+  width: 88%;
+  height: 100%;
   z-index: 2;
   pointer-events: none;
 }
 
 .heroImgMain {
-  object-fit: contain !important; /* На мобільних contain краще, щоб не різало голову */
+  object-fit: contain !important;
   object-position: bottom center !important;
   filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.35))
     drop-shadow(0 4px 20px rgba(0, 0, 0, 0.18));
@@ -58,7 +58,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 90px 20px 40px; /* Трохи більше падінгу знизу */
+  padding: 90px 20px 40px;
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.35) 0%,
@@ -66,11 +66,10 @@
     transparent 70%,
     rgba(0, 0, 0, 0.4) 100%
   );
-  z-index: 4; /* Текст завжди над фото */
-  pointer-events: none; /* Щоб можна було "крізь" текст натиснути на щось, якщо треба */
+  z-index: 4;
+  pointer-events: none;
 }
 
-/* Дозволяємо клікати на посилання та кнопки */
 .heroTop,
 .heroBottom,
 .heroSocialLink {
@@ -148,14 +147,14 @@
 /* TABLET */
 @media (min-width: 768px) {
   .heroBgText {
-    top: 50%;
-    left: 60%;
+    top: 52%;
+    left: 150%;
     font-size: 29vw;
   }
 
   .heroRight {
-    height: 100%;
-    width: 65%;
+    height: 90%;
+    width: 60%;
     left: auto;
     right: 0;
   }
@@ -208,7 +207,7 @@
 
   .heroRight {
     width: 60%;
-    height: 110%;
+    height: 92%;
     right: -7%;
     z-index: 11;
   }
