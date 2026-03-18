@@ -11,7 +11,7 @@ export const gender1Photos = [
   "g.10",
   "g.02",
 ].map((name) => ({
-  src: `/img/services/gender1/${name}.JPG`,
+  src: `/img/services/gender1/${name}.jpg`,
   alt: "Гендер паті",
 }));
 
