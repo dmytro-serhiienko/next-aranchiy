@@ -51,7 +51,7 @@ export default function RootLayout({
       className={`${unbounded.variable} ${inter.variable} ${montserrat.variable}`}
     >
       <head>
-        <link rel="icon" href="/img/favicon/favicon.png" type="image/png" />
+        <link rel="icon" href="/favicon/microphone.png" type="image/png" />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
