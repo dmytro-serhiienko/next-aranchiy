@@ -1,0 +1,142 @@
+.faq {
+  background: #f0ede8;
+  padding: 50px 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.title {
+  font-family: "Unbounded", sans-serif;
+  font-size: clamp(26px, 4.5vw, 45px);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  color: #292929;
+}
+
+.title::after {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  border-bottom: 1px solid #1e1e1e;
+  overflow: hidden;
+}
+
+.item:first-child {
+  border-top: 1px solid #1e1e1e;
+}
+
+.question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: "Unbounded", sans-serif;
+  font-size: clamp(13px, 1.4vw, 16px);
+  font-weight: 600;
+  color: rgba(41, 41, 41, 0.75);
+  transition: all 0.3s ease-in-out;
+}
+
+.question:hover {
+  transform: translateY(-5px);
+  color: #292929;
+}
+
+.icon {
+  font-size: 22px;
+  color: #292929;
+  flex-shrink: 0;
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.25s;
+}
+
+.isOpen .icon {
+  transform: rotate(45deg);
+  color: #000;
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.isOpen .answer {
+  max-height: 300px;
+}
+
+.answer p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.8;
+  color: #292929;
+  padding-bottom: 24px;
+  max-width: 820px;
+}
+
+@media (min-width: 768px) {
+  .faq {
+    padding: 50px 0;
+  }
+
+  .question {
+    padding: 26px 0;
+  }
+
+  .answer p {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .faq {
+    padding: 100px 0;
+  }
+
+  .container {
+    padding: 0 40px;
+    gap: 64px;
+  }
+
+  .question {
+    padding: 28px 0;
+    font-size: 16px;
+  }
+
+  .icon {
+    font-size: 24px;
+  }
+
+  .answer p {
+    font-size: 15px;
+    padding-bottom: 28px;
+  }
+}

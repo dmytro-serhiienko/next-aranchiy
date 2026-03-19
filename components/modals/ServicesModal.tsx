@@ -1,10 +1,11 @@
 "use client";
 import { useCallback, useEffect, useRef } from "react";
 import styles from "./ServiceModal.module.css";
-import WeddingModal from "./service-modals/WeddingModal";
-import CorporateModal from "./service-modals/CorporateModal";
-import GenderModal from "./service-modals/GenderModal";
-import BirthdayModal from "./service-modals/BirthdayModal";
+import WeddingModal from "./service-modals/WeddingModal/WeddingModal";
+import CorporateModal from "./service-modals/CorporateModal/CorporateModal";
+import GenderModal from "./service-modals/GenderModal/GenderModal";
+import BirthdayModal from "./service-modals/BirthdayModal/BirthdayModal";
+import PresentationModal from "./service-modals/PresentationModal/PresentationModal";
 
 interface Props {
   modalId: string | null;
@@ -30,6 +31,9 @@ function ModalContent({
 
     case "birthday":
       return <BirthdayModal onIntroEnd={onIntroEnd} />;
+
+    case "presentation":
+      return <PresentationModal onIntroEnd={onIntroEnd} />;
   }
 }
 
