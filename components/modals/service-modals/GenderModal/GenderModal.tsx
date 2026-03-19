@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { gender1Photos, gender1Reels, gender1Thanks } from "./gender-data";
 import GenderIntro from "@/components/ui/GenderIntro";
 import SwiperGallery from "@/components/ui/SwiperGallery";
-import styles from "./GenderModal.module.css";
+import styles from "../WeddingModal/WeddingModal.module.css";
 
 interface Props {
   onIntroEnd?: () => void;

@@ -40,14 +40,7 @@ export default function CorporateModal({ onIntroEnd }: Props) {
 
       {/* GLIBIVKA */}
       <article className={styles.event}>
-        <h3
-          className={styles.eventTitle}
-          style={{
-            marginTop: "50px",
-            borderTop: "1px solid rgba(0, 0, 0, 0.08)",
-            paddingTop: "50px",
-          }}
-        >
+        <h3 className={styles.eventTitle}>
           Pool Party & Chill: Корпоративний драйв у Глібівці
         </h3>
         <p className={styles.eventDesc}>
