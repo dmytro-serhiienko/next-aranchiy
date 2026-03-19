@@ -20,7 +20,7 @@ import {
   wedding5Thanks,
 } from "./wedding-data";
 
-import WeddingIntro from "@/components/ui/WeddingIntro";
+import WeddingIntro from "@/components/ui/IntroModal/Wedding/WeddingIntro";
 import SwiperGallery from "@/components/ui/SwiperGallery";
 import styles from "./WeddingModal.module.css";
 

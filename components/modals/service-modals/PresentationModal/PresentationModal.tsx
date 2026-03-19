@@ -7,7 +7,7 @@ import {
   presentation1Reels,
   presentation1Thanks,
 } from "./presentation-data";
-import PresentationIntro from "@/components/ui/PresentationIntro";
+import PresentationIntro from "@/components/ui/IntroModal/Presentation/PresentationIntro";
 import SwiperGallery from "@/components/ui/SwiperGallery";
 import styles from "../WeddingModal/WeddingModal.module.css";
 

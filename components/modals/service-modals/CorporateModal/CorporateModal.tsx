@@ -13,7 +13,7 @@ import {
   corporate3Reels,
   corporate3Thanks,
 } from "./corporate-data";
-import CorporateIntro from "@/components/ui/CorporateIntro";
+import CorporateIntro from "@/components/ui/IntroModal/Corporate/CorporateIntro";
 import SwiperGallery from "@/components/ui/SwiperGallery";
 import styles from "../WeddingModal/WeddingModal.module.css";
 

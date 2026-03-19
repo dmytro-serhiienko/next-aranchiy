@@ -7,7 +7,7 @@ import {
   birthday1Reels,
   birthday1Thanks,
 } from "./birthday-data";
-import BirthdayIntro from "@/components/ui/BirthdayIntro";
+import BirthdayIntro from "@/components/ui/IntroModal/Birthday/BirthdayIntro";
 import SwiperGallery from "@/components/ui/SwiperGallery";
 import styles from "../WeddingModal/WeddingModal.module.css";
 
