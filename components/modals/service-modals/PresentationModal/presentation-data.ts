@@ -35,3 +35,30 @@ export const presentation1Thanks = [
   },
 ];
 // !
+
+// ! Top 100
+export const presentation2Photos = [
+  "t01",
+  "t02",
+  "t03",
+  "t04",
+  "t05",
+  "t06",
+  "t07",
+].map((name) => ({
+  src: `/img/services/Presentation/corporateTop100/${name}.jpeg`,
+  alt: "Форум Be Beuty top 100",
+}));
+
+export const presentation2Reels = [
+  "https://www.instagram.com/reel/DH-9ccACccN/embed/captioned/",
+];
+
+export const presentation2Thanks = [
+  {
+    handle: "bebeauty_top100",
+    avatar:
+      "/img/services/Presentation/corporateTop100/insta-photo/bebeauty.jpg",
+  },
+];
+// !
