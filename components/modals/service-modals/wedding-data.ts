@@ -283,3 +283,39 @@ export const wedding4Thanks = [
   },
 ];
 // !
+
+// ! WEDDING 5
+export const wedding5Photos = ["5.1", "5.2", "5.3", "5.4", "5.5", "5.6"].map(
+  (name) => ({
+    src: `/img/services/wedding5/${name}.jpeg`,
+    alt: "Весілля Сергія та Тетяни",
+  }),
+);
+
+export const wedding5Reels = [
+  "https://www.instagram.com/reel/DPTJJUziKGm/embed/captioned/",
+];
+
+export const wedding5Thanks = [
+  {
+    handle: "fiesta_duet",
+    avatar: "/img/services/wedding5/insta-photo/fiestaduet.jpg",
+  },
+  {
+    handle: "olena_polityka",
+    avatar: "/img/services/wedding1/insta-photo/olena_polityka.jpg",
+  },
+  {
+    handle: "bondar.dj",
+    avatar: "/img/services/wedding5/insta-photo/bondar.jpg",
+  },
+  {
+    handle: "shar_studia_rivne",
+    avatar: "/img/services/wedding5/insta-photo/shar.jpg",
+  },
+  {
+    handle: "osnovianenko",
+    avatar: "/img/services/wedding2/insta-photo/osno.jpg",
+  },
+];
+// !
