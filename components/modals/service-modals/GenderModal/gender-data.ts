@@ -11,7 +11,7 @@ export const gender1Photos = [
   "g.10",
   "g.02",
 ].map((name) => ({
-  src: `/img/services/gender1/${name}.jpg`,
+  src: `/img/services/Gender/gender1/${name}.jpg`,
   alt: "Гендер паті",
 }));
 
@@ -23,15 +23,16 @@ export const gender1Reels = [
 export const gender1Thanks = [
   {
     handle: "olena_polityka",
-    avatar: "/img/services/wedding1/insta-photo/olena_polityka.jpg",
+    avatar: "/img/services/Weddings/wedding1/insta-photo/olena_polityka.jpg",
   },
   {
     handle: "valeriy.west",
-    avatar: "/img/services/wedding3/insta-photo/valeriywest.jpg",
+    avatar: "/img/services/Weddings/wedding3/insta-photo/valeriywest.jpg",
   },
   {
     handle: "dashapaseka",
-    avatar: "/img/services/corporateDubok/insta-photo/dashapaseka.jpg",
+    avatar:
+      "/img/services/Corporate/corporateDubok/insta-photo/dashapaseka.jpg",
   },
 ];
 // !

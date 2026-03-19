@@ -20,7 +20,7 @@ export const birthday1Photos = [
   "bir18",
   "bir19",
 ].map((name) => ({
-  src: `/img/services/birthday1/${name}.jpeg`,
+  src: `/img/services/Birthday/birthday1/${name}.jpeg`,
   alt: "День Народження Ірини",
 }));
 
@@ -31,15 +31,15 @@ export const birthday1Reels = [
 export const birthday1Thanks = [
   {
     handle: "irinachepurnaya2021",
-    avatar: "/img/services/birthday1/insta-photo/irinachepurnaya.jpg",
+    avatar: "/img/services/Birthday/birthday1/insta-photo/irinachepurnaya.jpg",
   },
   {
     handle: "_hayat_show_",
-    avatar: "/img/services/birthday1/insta-photo/hayatshow.jpg",
+    avatar: "/img/services/Birthday/birthday1/insta-photo/hayatshow.jpg",
   },
   {
     handle: "laguna_show_bar",
-    avatar: "/img/services/birthday1/insta-photo/lagunabar.jpg",
+    avatar: "/img/services/Birthday/birthday1/insta-photo/lagunabar.jpg",
   },
   {
     handle: "olena_polityka",
@@ -48,11 +48,11 @@ export const birthday1Thanks = [
 
   {
     handle: "yakobchuk_dj",
-    avatar: "/img/services/birthday1/insta-photo/yakobchuk.jpg",
+    avatar: "/img/services/Birthday/birthday1/insta-photo/yakobchuk.jpg",
   },
   {
     handle: "dmytrooxygen",
-    avatar: "/img/services/birthday1/insta-photo/dmytrooxygen.jpg",
+    avatar: "/img/services/Birthday/birthday1/insta-photo/dmytrooxygen.jpg",
   },
   {
     handle: "sofia.rivne",
@@ -60,7 +60,7 @@ export const birthday1Thanks = [
   },
   {
     handle: "ksenia_holmen",
-    avatar: "/img/services/birthday1/insta-photo/kseniaholmen.jpg",
+    avatar: "/img/services/Birthday/birthday1/insta-photo/kseniaholmen.jpg",
   },
 ];
 // !
