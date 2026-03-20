@@ -1,5 +1,5 @@
 // ! Top 100
-export const stars1Photos = ["s1", "s2", "s3", "s4"].map((name) => ({
+export const stars1Photos = ["s1", "s2", "s3", "s4", "s5"].map((name) => ({
   src: `/img/services/Stars/${name}.jpeg`,
   alt: "Форум Be Beuty top 100",
 }));
