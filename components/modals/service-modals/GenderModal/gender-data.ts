@@ -26,8 +26,8 @@ export const gender1Thanks = [
     avatar: "/img/services/Weddings/wedding1/insta-photo/olena_polityka.jpg",
   },
   {
-    handle: "valeriy.west",
-    avatar: "/img/services/Weddings/wedding3/insta-photo/valeriywest.jpg",
+    handle: "vitalii_kotlobai",
+    avatar: "/img/services/Gender/gender1/insta-photo/vitaliikotlobai.jpg",
   },
   {
     handle: "dashapaseka",

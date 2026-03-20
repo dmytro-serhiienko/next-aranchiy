@@ -53,6 +53,9 @@ export const corporate1Thanks = [
 
 // ! MORKVIANA
 export const corporate2Photos = [
+  "mor01",
+  "mor02",
+  "mor03",
   "mor1",
   "mor2",
   "mor3",
@@ -79,7 +82,8 @@ export const corporate2Photos = [
 }));
 
 export const corporate2Reels = [
-  "https://www.instagram.com/reel/DVs4EAKCN9f/embed/captioned/",
+  "https://www.instagram.com/reel/DTf0OehiMZO/embed/captioned/",
+  "https://www.instagram.com/reel/DTyy43GiLyi/embed/captioned/",
 ];
 
 export const corporate2Thanks = [

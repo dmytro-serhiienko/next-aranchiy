@@ -285,7 +285,7 @@ export const wedding4Thanks = [
 // !
 
 // ! WEDDING 5
-export const wedding5Photos = ["5.1", "5.2", "5.3", "5.4", "5.5", "5.6"].map(
+export const wedding5Photos = ["5.6", "5.2", "5.3", "5.4", "5.5", "5.1"].map(
   (name) => ({
     src: `/img/services/Weddings/wedding5/${name}.jpeg`,
     alt: "Весілля Сергія та Тетяни",
