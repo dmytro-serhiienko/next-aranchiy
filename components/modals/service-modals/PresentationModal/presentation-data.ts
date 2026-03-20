@@ -45,6 +45,7 @@ export const presentation2Photos = [
   "t05",
   "t06",
   "t07",
+  "t08",
 ].map((name) => ({
   src: `/img/services/Presentation/corporateTop100/${name}.jpeg`,
   alt: "Форум Be Beuty top 100",
