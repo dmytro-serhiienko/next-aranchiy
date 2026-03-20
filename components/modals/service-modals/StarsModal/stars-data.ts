@@ -2,7 +2,7 @@
 export const stars1Photos = ["s1", "s2", "s3", "s4", "s5", "s6"].map(
   (name) => ({
     src: `/img/services/Stars/${name}.jpeg`,
-    alt: "Форум Be Beuty top 100",
+    alt: "Робота з зірками",
   }),
 );
 
