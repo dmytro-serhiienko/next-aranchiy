@@ -65,6 +65,11 @@
     gap: 20px;
     justify-content: center;
   }
+
+  .event {
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+  }
 }
 
 .reelsItem {
