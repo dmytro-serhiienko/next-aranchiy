@@ -10,7 +10,7 @@ import Faq from "@/components/sections/Faq/Faq";
 import Contacts from "@/components/sections/Contacts/Contacts";
 import Partners from "@/components/sections/Partners/Partners";
 import ScrollTop from "@/components/ui/ScrollTop";
-import Animations from "@/components/ui/Animations";
+import Animations from "@/components/ui/AnimationsGSAP";
 import Modal from "@/components/modals/Modal";
 
 export default function HomePage() {
