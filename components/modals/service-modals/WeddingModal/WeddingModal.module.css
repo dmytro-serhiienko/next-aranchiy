@@ -13,8 +13,8 @@
 }
 
 .event {
-  margin-bottom: 56px;
-  padding-bottom: 56px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .eventTitle {
@@ -33,10 +33,10 @@
   margin-bottom: 24px;
 }
 
-/* Reels */
+/*! Reels */
 .reels {
-  margin-top: 48px;
-  padding-top: 32px;
+  margin-top: 10px;
+  padding-top: 10px;
   /* border-top: 1px solid rgba(0, 0, 0, 0.08); */
 }
 
