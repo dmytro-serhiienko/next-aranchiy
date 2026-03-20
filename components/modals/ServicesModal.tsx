@@ -6,6 +6,7 @@ import CorporateModal from "./service-modals/CorporateModal/CorporateModal";
 import GenderModal from "./service-modals/GenderModal/GenderModal";
 import BirthdayModal from "./service-modals/BirthdayModal/BirthdayModal";
 import PresentationModal from "./service-modals/PresentationModal/PresentationModal";
+import OneYearModal from "./service-modals/OneYear/OneYearModal";
 
 interface Props {
   modalId: string | null;
@@ -34,6 +35,9 @@ function ModalContent({
 
     case "presentation":
       return <PresentationModal onIntroEnd={onIntroEnd} />;
+
+    case "child":
+      return <OneYearModal onIntroEnd={onIntroEnd} />;
   }
 }
 

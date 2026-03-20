@@ -12,6 +12,9 @@ import {
   corporate3Photos,
   corporate3Reels,
   corporate3Thanks,
+  corporate4Photos,
+  corporate4Reels,
+  corporate4Thanks,
 } from "./corporate-data";
 import CorporateIntro from "@/components/ui/IntroModal/Corporate/CorporateIntro";
 import SwiperGallery from "@/components/ui/SwiperGallery";
@@ -226,6 +229,81 @@ export default function CorporateModal({ onIntroEnd }: Props) {
         <h2 className={styles.thanksTitle}>Творці атмосфери</h2>
         <ul className={styles.thanksList}>
           {corporate1Thanks.map(({ handle, avatar }) => (
+            <li key={handle} className={styles.thanksItem}>
+              <Link
+                href={`https://www.instagram.com/${handle}/`}
+                className={styles.thanksCard}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className={styles.thanksAvatarWrap}>
+                  <Image
+                    src={avatar}
+                    alt={`@${handle}`}
+                    className={styles.thanksAvatar}
+                    width={64}
+                    height={64}
+                  />
+                </div>
+                <span className={styles.thanksName}>@{handle}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      {/*  */}
+
+      {/* Bomz */}
+      <article className={styles.event}>
+        <h3
+          className={styles.eventTitle}
+          style={{
+            marginTop: "50px",
+            borderTop: "1px solid rgba(0, 0, 0, 0.08)",
+            paddingTop: "50px",
+          }}
+        >
+          Безхатько-паті: Корпоратив без фільтрів та пафосу
+        </h3>
+        <p className={styles.eventDesc}>
+          Коли команда вирішує залишити зону комфорту і дорогі костюми вдома,
+          народжується найщиріший драйв. Вечірка у стилі «бомж-стайл» — це
+          виклик стереотипам і перевірка на почуття гумору, яку ми пройшли на
+          100%. Повна свобода самовираження, картонні декорації та кращий
+          дрес-код у стилі «знайшов на горищі». <br />
+          Моя роль: Стати ватажком цього хаосу. Тут не працюють стандартні жарти
+          — тут потрібен гострий інтерактив, імпровізація та вміння бути на
+          одній хвилі з аудиторією, яка готова на будь-який кіпіш. Максимальне
+          розслаблення, де кожен топ-менеджер стає «своїм хлопцем», а
+          корпоративна культура зміцнюється через спільний сміх.
+        </p>
+
+        <SwiperGallery id="swiper-corporate-1" photos={corporate4Photos} />
+      </article>
+
+      {/* Reels */}
+      <div className={styles.reels}>
+        <h2 className={styles.reelsTitle}>Моменти, що оживають</h2>
+        <div className={styles.reelsGrid}>
+          {corporate4Reels.map((src, i) => (
+            <div key={i} className={styles.reelsItem}>
+              <iframe
+                src={src}
+                className={styles.reelsIframe}
+                frameBorder="0"
+                scrolling="no"
+                allowFullScreen={true}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Thanks */}
+      <div className={styles.thanks}>
+        <h2 className={styles.thanksTitle}>Творці атмосфери</h2>
+        <ul className={styles.thanksList}>
+          {corporate4Thanks.map(({ handle, avatar }) => (
             <li key={handle} className={styles.thanksItem}>
               <Link
                 href={`https://www.instagram.com/${handle}/`}

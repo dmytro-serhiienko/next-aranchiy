@@ -133,3 +133,22 @@ export const corporate3Thanks = [
   },
 ];
 // !
+
+// ! Bomz
+export const corporate4Photos = ["bo1", "bo2", "bo3", "bo4"].map((name) => ({
+  src: `/img/services/Corporate/corporateBomzParty/${name}.jpeg`,
+  alt: "Корпоратив Бомж Паті",
+}));
+
+export const corporate4Reels = [
+  "https://www.instagram.com/reel/DGVcWwJCZHs/embed/captioned/",
+];
+
+export const corporate4Thanks = [
+  {
+    handle: "d_olegovna",
+    avatar:
+      "/img/services/Corporate/corporateBomzParty/insta-photo/olegovna.jpg",
+  },
+];
+// !
