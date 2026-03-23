@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1 align="center">🎤 Event Host Portfolio Landing Page</h1>
 
-## Getting Started
+<p align="center">
+  <img src="./public/img/readme.png" alt="Project Preview" width="800"/>
+</p>
 
-First, run the development server:
+<p align="center">
+  Modern landing-page portfolio for a professional event host with premium UX & smooth animations
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<h2>🚀 About The Project</h2>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<p>
+This project is a modern <b>landing-page portfolio</b> designed to represent a professional event host.
+It focuses on delivering a <b>premium user experience</b> through smooth animations, responsive design, and high performance.
+</p>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+<h2>🛠️ Tech Stack & Features</h2>
 
-To learn more about Next.js, take a look at the following resources:
+<h3>✨ Animations & UX</h3>
+<ul>
+  <li><b>GSAP + Lenis</b> — smooth scrolling and advanced animation timelines</li>
+</ul>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<h3>📱 UI & Styling</h3>
+<ul>
+  <li><b>Tailwind CSS</b> — mobile-first responsive design</li>
+</ul>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+<h3>🎞️ Sliders & Media</h3>
+<ul>
+  <li><b>Swiper.js</b> — touch-enabled sliders</li>
+  <li><b>Yet Another React Lightbox</b> — fullscreen gallery (images & videos)</li>
+</ul>
 
-## Deploy on Vercel
+<h3>📝 Forms & Validation</h3>
+<ul>
+  <li><b>Formik + Yup</b> — form state management & validation</li>
+</ul>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<h3>📧 Backend</h3>
+<ul>
+  <li><b>Nodemailer</b> — email delivery for booking requests</li>
+</ul>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<h3>🔔 Notifications</h3>
+<ul>
+  <li><b>React Hot Toast</b> — user feedback system</li>
+</ul>
+
+<h3>⚡ Performance & Deployment</h3>
+<ul>
+  <li><b>Vercel</b> — CI/CD and fast deployment</li>
+  <li><b>Next.js Image Optimization</b> — optimized images & Lighthouse performance</li>
+</ul>
+
+---
+
+<h2>📌 Project Status</h2>
+
+<p>🚧 Project is currently in the <b>content-filling phase</b>.</p>
+
+<ul>
+  <li>Media content will be updated</li>
+  <li>Client reviews will be added</li>
+  <li>Portfolio cases will expand</li>
+</ul>
+
+---
