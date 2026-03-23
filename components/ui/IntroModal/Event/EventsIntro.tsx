@@ -9,7 +9,6 @@ export default function EventsIntro() {
           <svg viewBox="0 0 60 80" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="20" width="44" height="60" rx="3" fill="#e0e0e0" />
             <rect x="8" y="20" width="44" height="8" rx="3" fill="#bdbdbd" />
-            {/* вікна */}
             <rect x="14" y="34" width="8" height="8" rx="1" fill="#90caf9" />
             <rect x="26" y="34" width="8" height="8" rx="1" fill="#90caf9" />
             <rect x="38" y="34" width="8" height="8" rx="1" fill="#fff9c4" />
@@ -18,9 +17,7 @@ export default function EventsIntro() {
             <rect x="38" y="48" width="8" height="8" rx="1" fill="#90caf9" />
             <rect x="14" y="62" width="8" height="8" rx="1" fill="#90caf9" />
             <rect x="38" y="62" width="8" height="8" rx="1" fill="#fff9c4" />
-            {/* двері */}
             <rect x="24" y="60" width="12" height="20" rx="2" fill="#9e9e9e" />
-            {/* прапорець */}
             <line
               x1="30"
               y1="20"
@@ -33,7 +30,6 @@ export default function EventsIntro() {
           </svg>
         </div>
 
-        {/* Торт — день народження */}
         <div className={`${styles.item} ${styles.cake}`}>
           <svg viewBox="0 0 70 90" xmlns="http://www.w3.org/2000/svg">
             <ellipse cx="35" cy="82" rx="32" ry="6" fill="#ffe0b2" />
@@ -83,7 +79,6 @@ export default function EventsIntro() {
           </svg>
         </div>
 
-        {/* Мікрофон — концерт/конференція */}
         <div className={`${styles.item} ${styles.mic}`}>
           <svg viewBox="0 0 50 90" xmlns="http://www.w3.org/2000/svg">
             <rect x="20" y="65" width="10" height="20" rx="5" fill="#bdbdbd" />
@@ -119,14 +114,11 @@ export default function EventsIntro() {
           </svg>
         </div>
 
-        {/* Ножиці — відкриття */}
         <div className={`${styles.item} ${styles.scissors}`}>
           <svg viewBox="0 0 60 80" xmlns="http://www.w3.org/2000/svg">
-            {/* стрічка */}
             <rect x="8" y="35" width="44" height="10" rx="5" fill="#ef9a9a" />
             <rect x="22" y="30" width="16" height="20" rx="2" fill="#e57373" />
             <rect x="26" y="28" width="8" height="24" rx="1" fill="#ffcdd2" />
-            {/* ножиці */}
             <circle
               cx="18"
               cy="20"
@@ -163,7 +155,6 @@ export default function EventsIntro() {
               strokeWidth="3"
               strokeLinecap="round"
             />
-            {/* конфеті */}
             <circle cx="10" cy="55" r="3" fill="#90caf9" />
             <circle cx="50" cy="55" r="3" fill="#a5d6a7" />
             <circle cx="8" cy="65" r="2" fill="#fff176" />

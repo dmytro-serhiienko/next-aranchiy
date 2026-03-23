@@ -133,12 +133,10 @@ export default function SwiperGallery({ id, photos }: Props) {
     setLightboxOpen(true);
   }
 
-  // Синхронізуємо swiper з лайтбоксом при закритті
   function handleLightboxClose() {
     setLightboxOpen(false);
   }
 
-  // Коли лайтбокс змінює слайд — синхронізуємо свайпер
   function handleLightboxView({ index }: { index: number }) {
     mainSwiperRef.current?.slideTo(index);
   }

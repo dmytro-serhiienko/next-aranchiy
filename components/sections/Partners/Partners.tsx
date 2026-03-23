@@ -88,7 +88,7 @@ export default function Partners() {
             </Link>
           ))}
 
-          {/* Копія для безперервної анімації */}
+          {/* Копія для безперервної ані */}
           {partners.map(({ href, src, alt }) => (
             <Link
               key={`copy-${alt}`}

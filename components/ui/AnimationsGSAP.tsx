@@ -8,7 +8,7 @@ export default function Animations() {
       const { ScrollTrigger } = await import("gsap/ScrollTrigger");
       gsap.registerPlugin(ScrollTrigger);
 
-      // ─── HERO ───────────────────────────────────────────────
+      // ─── HERO 
       const hero = document.querySelector("#hero");
       if (hero) {
         const bgText = hero.querySelector("[class*='heroBgText']");
@@ -123,7 +123,7 @@ export default function Animations() {
         }
       }
 
-      // ─── СЕКЦІЇ ─────────────────────────────────────────────
+      // ─── СЕКЦІЇ 
       const sectionSelectors = [
         "#about",
         "#services",

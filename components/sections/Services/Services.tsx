@@ -12,7 +12,6 @@ export default function Services() {
         <h2 className={styles.title}>Мої послуги</h2>
 
         <div className={styles.grid}>
-          {/* Весілля */}
           <div
             className={`${styles.card} ${styles.cardWedding}`}
             onClick={() => setActiveModal("wedding")}
@@ -39,7 +38,6 @@ export default function Services() {
               </div>
             </div>
 
-            {/* Теги послуг */}
             <div className={styles.tags}>
               <span className={styles.tag}>Виїзна церемонія</span>
               <span className={styles.tag}>Банкет</span>
@@ -52,7 +50,6 @@ export default function Services() {
             </div>
           </div>
 
-          {/* Інші заходи */}
           <div
             className={`${styles.card} ${styles.cardEvents}`}
             onClick={() => setActiveModal("events")}
@@ -79,7 +76,6 @@ export default function Services() {
               </div>
             </div>
 
-            {/* Теги послуг */}
             <div className={styles.tags}>
               <span className={styles.tag}>Корпоратив</span>
               <span className={styles.tag}>День народження</span>

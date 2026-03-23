@@ -172,9 +172,6 @@
     gap: 72px;
   }
 
-  .image {
-  }
-
   .imageWrap {
     height: 440px;
   }
@@ -219,9 +216,6 @@
   .imageWrap {
     width: 45%;
     max-width: none;
-  }
-
-  .image {
   }
 
   .imageWrap {

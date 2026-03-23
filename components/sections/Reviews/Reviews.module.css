@@ -94,7 +94,6 @@
   transform: scale(1.05);
 }
 
-/* Swiper pagination — глобальні стилі бо swiper генерує класи сам */
 :global(.swiper-pagination-bullet) {
   background: rgba(41, 41, 41, 0.25) !important;
   opacity: 1 !important;
