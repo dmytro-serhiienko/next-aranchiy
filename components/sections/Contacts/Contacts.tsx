@@ -50,12 +50,14 @@ export default function Contacts({ onReserveClick }: Props) {
 
         <div className={styles.info}>
           <Link
-            href="mailto:serhiy@example.com"
+            href="mailto:sergeyaranchij@gmail.com"
             className={styles.contactItem}
             itemProp="email"
           >
             <span className={styles.contactLabel}>Email</span>
-            <span className={styles.contactValue}>serhiy@example.com</span>
+            <span className={styles.contactValue}>
+              sergeyaranchij@gmail.com
+            </span>
             <i className="ri-arrow-right-up-line" aria-hidden="true" />
           </Link>
 

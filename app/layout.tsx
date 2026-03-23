@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Unbounded, Inter, Montserrat } from "next/font/google";
+
 import "../styles/globals.css";
 
 const unbounded = Unbounded({
