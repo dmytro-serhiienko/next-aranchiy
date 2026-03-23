@@ -1,31 +1,7 @@
 "use client";
 import { useState } from "react";
 import styles from "./Services.module.css";
-import ServiceModal from "@/components/modals/ServicesModal";
-
-const cards = [
-  { id: "wedding", icon: "ri-vip-diamond-line", name: "Весілля" },
-  { id: "corporate", icon: "ri-building-2-line", name: "Корпоративні заходи" },
-  { id: "gender", icon: "ri-genderless-line", name: "Гендер паті" },
-  { id: "birthday", icon: "ri-cake-2-line", name: "Дні народження" },
-  { id: "child", icon: "ri-user-6-line", name: "Хрещення, рочок дитині" },
-  {
-    id: "openBiz",
-    icon: "ri-scissors-cut-line",
-    name: "Відкриття магазинів та бізнесів",
-  },
-  {
-    id: "presentation",
-    icon: "ri-slideshow-2-line",
-    name: "Презентації, конференції, форуми",
-  },
-  { id: "concert", icon: "ri-mic-2-line", name: "Концерти, благодійні події" },
-  {
-    id: "media",
-    icon: "ri-camera-lens-line",
-    name: "Робота з медійними людьми",
-  },
-];
+import ServicesModal from "@/components/modals/ServicesModal";
 
 export default function Services() {
   const [activeModal, setActiveModal] = useState<string | null>(null);
@@ -36,27 +12,90 @@ export default function Services() {
         <h2 className={styles.title}>Мої послуги</h2>
 
         <div className={styles.grid}>
-          {cards.map(({ id, icon, name }) => (
-            <div
-              key={id}
-              className={styles.card}
-              onClick={() => setActiveModal(id)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => e.key === "Enter" && setActiveModal(id)}
-            >
-              <i className={`${styles.icon} ${icon}`} aria-hidden="true" />
-              <span className={styles.name}>{name}</span>
-              <i
-                className={`${styles.arrow} ri-arrow-right-up-line`}
-                aria-hidden="true"
-              />
+          {/* Весілля */}
+          <div
+            className={`${styles.card} ${styles.cardWedding}`}
+            onClick={() => setActiveModal("wedding")}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => e.key === "Enter" && setActiveModal("wedding")}
+          >
+            <div className={styles.cardInner}>
+              <div className={styles.cardTop}>
+                <i
+                  className={`${styles.icon} ri-vip-diamond-line`}
+                  aria-hidden="true"
+                />
+                <i
+                  className={`${styles.arrow} ri-arrow-right-up-line`}
+                  aria-hidden="true"
+                />
+              </div>
+              <div className={styles.cardBottom}>
+                <span className={styles.name}>Весілля</span>
+                <span className={styles.desc}>
+                  Незабутній день вашого кохання — з душею, стилем та харизмою
+                </span>
+              </div>
             </div>
-          ))}
+
+            {/* Теги послуг */}
+            <div className={styles.tags}>
+              <span className={styles.tag}>Виїзна церемонія</span>
+              <span className={styles.tag}>Банкет</span>
+              <span className={styles.tag}>Розпис</span>
+              <span className={styles.tag}>Фуршет</span>
+              <span className={styles.tag}>Камерне весілля</span>
+              <span className={styles.tag}>Декор та флористика</span>
+              <span className={styles.tag}>Кейтеринг</span>
+              <span className={styles.tag}>Технічне забезпечення</span>
+            </div>
+          </div>
+
+          {/* Інші заходи */}
+          <div
+            className={`${styles.card} ${styles.cardEvents}`}
+            onClick={() => setActiveModal("events")}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => e.key === "Enter" && setActiveModal("events")}
+          >
+            <div className={styles.cardInner}>
+              <div className={styles.cardTop}>
+                <i
+                  className={`${styles.icon} ri-sparkling-2-line`}
+                  aria-hidden="true"
+                />
+                <i
+                  className={`${styles.arrow} ri-arrow-right-up-line`}
+                  aria-hidden="true"
+                />
+              </div>
+              <div className={styles.cardBottom}>
+                <span className={styles.name}>Інші заходи</span>
+                <span className={styles.desc}>
+                  Корпоративи, дні народження, гендер паті, конференції та інше
+                </span>
+              </div>
+            </div>
+
+            {/* Теги послуг */}
+            <div className={styles.tags}>
+              <span className={styles.tag}>Корпоратив</span>
+              <span className={styles.tag}>День народження</span>
+              <span className={styles.tag}>Гендер паті</span>
+              <span className={styles.tag}>Конференція</span>
+              <span className={styles.tag}>Презентація</span>
+              <span className={styles.tag}>Ювілей</span>
+              <span className={styles.tag}>Конференція</span>
+              <span className={styles.tag}>Концерт</span>
+              <span className={styles.tag}>Відкриття</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <ServiceModal
+      <ServicesModal
         modalId={activeModal}
         onClose={() => setActiveModal(null)}
       />

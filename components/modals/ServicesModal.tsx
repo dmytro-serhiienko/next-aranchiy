@@ -2,12 +2,7 @@
 import { useCallback, useEffect, useRef } from "react";
 import styles from "./ServiceModal.module.css";
 import WeddingModal from "./service-modals/WeddingModal/WeddingModal";
-import CorporateModal from "./service-modals/CorporateModal/CorporateModal";
-import GenderModal from "./service-modals/GenderModal/GenderModal";
-import BirthdayModal from "./service-modals/BirthdayModal/BirthdayModal";
-import PresentationModal from "./service-modals/PresentationModal/PresentationModal";
-import OneYearModal from "./service-modals/OneYearModal/OneYearModal";
-import StarsModal from "./service-modals/StarsModal/StarsModal";
+import EventsModal from "./service-modals/Events/EventsModal";
 
 interface Props {
   modalId: string | null;
@@ -24,28 +19,14 @@ function ModalContent({
   switch (modalId) {
     case "wedding":
       return <WeddingModal onIntroEnd={onIntroEnd} />;
-
-    case "corporate":
-      return <CorporateModal onIntroEnd={onIntroEnd} />;
-
-    case "gender":
-      return <GenderModal onIntroEnd={onIntroEnd} />;
-
-    case "birthday":
-      return <BirthdayModal onIntroEnd={onIntroEnd} />;
-
-    case "presentation":
-      return <PresentationModal onIntroEnd={onIntroEnd} />;
-
-    case "child":
-      return <OneYearModal onIntroEnd={onIntroEnd} />;
-
-    case "media":
-      return <StarsModal onIntroEnd={onIntroEnd} />;
+    case "events":
+      return <EventsModal onIntroEnd={onIntroEnd} />;
+    default:
+      return <p style={{ padding: 40 }}>Скоро буде...</p>;
   }
 }
 
-export default function ServiceModal({ modalId, onClose }: Props) {
+export default function ServicesModal({ modalId, onClose }: Props) {
   const isOpen = !!modalId;
   const panelRef = useRef<HTMLDivElement>(null);
 
