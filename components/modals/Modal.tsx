@@ -29,9 +29,13 @@ export default function Modal({ isOpen, onClose }: Props) {
   }, [isOpen, onClose]);
 
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "";
+    if (isOpen) {
+      window.dispatchEvent(new Event("lenis:stop"));
+    } else {
+      window.dispatchEvent(new Event("lenis:start"));
+    }
     return () => {
-      document.body.style.overflow = "";
+      window.dispatchEvent(new Event("lenis:start"));
     };
   }, [isOpen]);
 
@@ -71,7 +75,7 @@ export default function Modal({ isOpen, onClose }: Props) {
         if (e.target === overlayRef.current) onClose();
       }}
     >
-      <div className={styles.modal}>
+      <div className={styles.modal} data-lenis-prevent>
         <button
           className={styles.modalClose}
           onClick={onClose}

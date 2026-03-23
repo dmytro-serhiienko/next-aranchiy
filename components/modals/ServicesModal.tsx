@@ -1,5 +1,6 @@
 "use client";
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { ReactLenis, type LenisRef } from "lenis/react";
 import styles from "./ServiceModal.module.css";
 import WeddingModal from "./service-modals/WeddingModal/WeddingModal";
 import EventsModal from "./service-modals/Events/EventsModal";
@@ -28,15 +29,19 @@ function ModalContent({
 
 export default function ServicesModal({ modalId, onClose }: Props) {
   const isOpen = !!modalId;
-  const panelRef = useRef<HTMLDivElement>(null);
+  const panelRef = useRef<LenisRef>(null);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const resetScroll = useCallback(() => {
-    if (panelRef.current) panelRef.current.scrollTop = 0;
+    panelRef.current?.lenis?.scrollTo(0, { immediate: true });
+    setIsAnimating(false);
   }, []);
 
   useEffect(() => {
-    if (isOpen && panelRef.current) {
-      panelRef.current.scrollTop = 0;
+    if (isOpen) {
+      const id = setTimeout(() => setIsAnimating(true), 0);
+      panelRef.current?.lenis?.scrollTo(0, { immediate: true });
+      return () => clearTimeout(id);
     }
   }, [isOpen, modalId]);
 
@@ -49,9 +54,13 @@ export default function ServicesModal({ modalId, onClose }: Props) {
   }, [isOpen, onClose]);
 
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "";
+    if (isOpen) {
+      window.dispatchEvent(new Event("lenis:stop"));
+    } else {
+      window.dispatchEvent(new Event("lenis:start"));
+    }
     return () => {
-      document.body.style.overflow = "";
+      window.dispatchEvent(new Event("lenis:start"));
     };
   }, [isOpen]);
 
@@ -60,14 +69,29 @@ export default function ServicesModal({ modalId, onClose }: Props) {
   return (
     <div className={styles.modal} role="dialog" aria-modal={true}>
       <div className={styles.overlay} onClick={onClose} />
-      <div className={styles.panel} ref={panelRef}>
+      <ReactLenis
+        className={styles.panel}
+        ref={panelRef}
+        options={{ lerp: 0.1, duration: 1.5, smoothWheel: true }}
+      >
+        {isAnimating && (
+          <div
+            aria-hidden="true"
+            style={{
+              position: "absolute",
+              inset: 0,
+              zIndex: 50,
+              cursor: "default",
+            }}
+          />
+        )}
         <button className={styles.close} onClick={onClose} aria-label="Закрити">
           <i className="ri-close-line" aria-hidden="true" />
         </button>
         <div className={styles.inner}>
           <ModalContent modalId={modalId} onIntroEnd={resetScroll} />
         </div>
-      </div>
+      </ReactLenis>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Unbounded, Inter, Montserrat } from "next/font/google";
+import { SmoothScroll } from "@/components/ui/SmoothScroll/SmoothScroll";
 
 import "../styles/globals.css";
 
@@ -58,7 +59,9 @@ export default function RootLayout({
           href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   );
 }
