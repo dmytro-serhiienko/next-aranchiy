@@ -225,6 +225,14 @@ export const corporate2Thanks = [
     avatar:
       "/img/services/Corporate/corporateMorkviana/insta-photo/morkvianamariana.jpg",
   },
+  {
+    handle: "olena_polityka",
+    avatar: "/img/services/Weddings/wedding1/insta-photo/olena_polityka.jpg",
+  },
+  {
+    handle: "vitalii_kotlobai",
+    avatar: "/img/services/Gender/gender1/insta-photo/vitaliikotlobai.jpg",
+  },
 ];
 // !
 

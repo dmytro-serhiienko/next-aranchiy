@@ -9,6 +9,11 @@ const partners = [
     alt: "Партнер Treskare",
   },
   {
+    href: "https://zlata-plaza.com.ua/r",
+    src: "/img/partners-section/zlata.png",
+    alt: "Партнер Zlata Plaza",
+  },
+  {
     href: "https://www.instagram.com/space__transfer",
     src: "/img/partners-section/spacetransfer.png",
     alt: "Партнер Space Transfer",

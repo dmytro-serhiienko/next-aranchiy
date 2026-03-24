@@ -30,7 +30,7 @@ export default function Hero() {
       <div className={styles.heroContainer}>
         <div className={styles.heroRight}>
           <Image
-            src="/img/hero-section/hero-background.png"
+            src="/img/hero-section/hero-backg.png"
             alt="Ведучий Сергій Аранчій у костюмі"
             className={styles.heroImgMain}
             priority
