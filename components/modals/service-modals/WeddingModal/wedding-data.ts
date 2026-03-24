@@ -474,5 +474,9 @@ export const wedding6Thanks = [
     handle: "cler.raychuk",
     avatar: "/img/services/Weddings/wedding6/insta-photo/cler.jpg",
   },
+  {
+    handle: "ivita_conditer",
+    avatar: "/img/services/Weddings/wedding6/insta-photo/conditer.jpg",
+  },
 ];
 // !
