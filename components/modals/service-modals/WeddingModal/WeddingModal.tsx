@@ -18,6 +18,9 @@ import {
   wedding5Photos,
   wedding5Reels,
   wedding5Thanks,
+  wedding6Photos,
+  wedding6Reels,
+  wedding6Thanks,
 } from "./wedding-data";
 
 import WeddingIntro from "@/components/ui/IntroModal/Wedding/WeddingIntro";
@@ -84,6 +87,80 @@ export default function WeddingModal({ onIntroEnd }: Props) {
         <h2 className={styles.thanksTitle}>Творці атмосфери</h2>
         <ul className={styles.thanksList}>
           {wedding1Thanks.map(({ handle, avatar }) => (
+            <li key={handle} className={styles.thanksItem}>
+              <Link
+                href={`https://www.instagram.com/${handle}/`}
+                className={styles.thanksCard}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className={styles.thanksAvatarWrap}>
+                  <Image
+                    src={avatar}
+                    alt={`@${handle}`}
+                    className={styles.thanksAvatar}
+                    width={64}
+                    height={64}
+                  />
+                </div>
+                <span className={styles.thanksName}>@{handle}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* ВЕСІЛЛЯ 1.2 */}
+      <article className={styles.event}>
+        <h3
+          className={styles.eventTitle}
+          style={{
+            marginTop: "50px",
+            borderTop: "1px solid rgba(0, 0, 0, 0.08)",
+            paddingTop: "50px",
+          }}
+        >
+          Від дитячих ігор до спільного «Так»:: Юрій та Маргарита
+        </h3>
+        <p className={styles.eventDesc}>
+          Колись вони були лише дітьми, які гралися у дворі біля прабабусиної
+          хати, а сьогодні вони — пара, що свідомо обрала спільне майбутнє. Це
+          весілля стало не просто святом, а справжнім маніфестом любові, яка
+          витримала перевірку часом. Дитячі спогади та спільні пригоди в
+          затишному дворі перетворилися на міцне почуття, що отримало своє
+          продовження біля весільного вівтаря. Вечір, сповнений ностальгії,
+          теплих розповідей близьких та усвідомлення того, що справжнє кохання
+          часто починається з самих витоків. Я став провідником у цій унікальній
+          історії, підкреслив її цінність та створив простір, де кожен гість
+          відчув би щирість цього багаторічного звʼязку.
+        </p>
+
+        <SwiperGallery id="swiper-wedding-6" photos={wedding6Photos} />
+      </article>
+
+      {/* Reels */}
+      <div className={styles.reels}>
+        <h2 className={styles.reelsTitle}>Моменти, що оживають</h2>
+        <div className={styles.reelsGrid}>
+          {wedding6Reels.map((src, i) => (
+            <div key={i} className={styles.reelsItem}>
+              <iframe
+                src={src}
+                className={styles.reelsIframe}
+                frameBorder="0"
+                scrolling="no"
+                allowFullScreen={true}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Thanks */}
+      <div className={styles.thanks}>
+        <h2 className={styles.thanksTitle}>Творці атмосфери</h2>
+        <ul className={styles.thanksList}>
+          {wedding6Thanks.map(({ handle, avatar }) => (
             <li key={handle} className={styles.thanksItem}>
               <Link
                 href={`https://www.instagram.com/${handle}/`}
