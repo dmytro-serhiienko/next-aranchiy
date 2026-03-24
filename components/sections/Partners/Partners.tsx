@@ -9,7 +9,7 @@ const partners = [
     alt: "Партнер Treskare",
   },
   {
-    href: "https://zlata-plaza.com.ua/r",
+    href: "https://zlata-plaza.com.ua/",
     src: "/img/partners-section/zlata.png",
     alt: "Партнер Zlata Plaza",
   },
