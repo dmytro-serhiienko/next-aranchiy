@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   keywords: "Сергій Аранчій, ведучий на весілля, тамада, ведучий корпоративів",
   authors: [{ name: "Сергій Аранчій" }],
   verification: {
-    google: "google941807896b9d27c5",
+    google: "0cfevxYGq-zL3-Ev",
   },
   openGraph: {
     title: "Сергій Аранчій — Ведучий вашого ідеального свята",
