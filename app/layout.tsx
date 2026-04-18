@@ -35,11 +35,12 @@ export const metadata: Metadata = {
   verification: {
     google: "0cfevxYGq-zL3-EvGxpOE1UWv1TYLnyi9FID64DUpp8",
   },
+  metadataBase: new URL("https://next-aranchiy.vercel.app"),
   openGraph: {
     title: "Сергій Аранчій — Ведучий вашого свята.",
     description:
       "Сучасний формат, щирі емоції та професійна організація вашого івенту.",
-    images: ["/public/img/about-section/about-1.jpg"],
+    images: ["/img/about-section/about-1.jpg"],
     type: "website",
   },
 };
