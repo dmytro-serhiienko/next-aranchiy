@@ -61,7 +61,7 @@ export default function EventModal({ onIntroEnd }: Props) {
         <h3 className={styles.eventTitle}>
           День народження: Сяйво, що захоплює{" "}
         </h3>
-        <p className={styles.eventDesc}>
+        {/* <p className={styles.eventDesc}>
           Коли замовник просить про «вау-ефект», ми створюємо цілий всесвіт. Цей
           день народження став справжнім перформансом, де кожна секунда була
           наповнена естетикою та драйвом. Поєднання небесної чистоти та
@@ -69,7 +69,7 @@ export default function EventModal({ onIntroEnd }: Props) {
           кришталеві люстри та срібний дрес-код. Результат: Іменинниця в центрі
           уваги, гості в захваті, а стрічки соцмереж переповнені контентом, про
           які хочеться знімати кіно.
-        </p>
+        </p> */}
 
         <SwiperGallery id="swiper-birthday-1" photos={birthday1Photos} />
       </article>
@@ -132,14 +132,14 @@ export default function EventModal({ onIntroEnd }: Props) {
         >
           IT Rivne Conference: Епіцентр технологій та ідей
         </h3>
-        <p className={styles.eventDesc}>
+        {/* <p className={styles.eventDesc}>
           Подія, що обʼєднала бізнес, освіту та технології навколо штучного
           інтелекту. Це не просто конференція - це простір для нових ідей,
           рішень і людей, які творять майбутне. Вдячний за довіру бути ведучим
           цього унікального заходу. Для мене це важливий крок уперед, новий
           досвід і сильна мотивація. Два дні змістовних дискусій, цінних
           знайомств та натхнення.
-        </p>
+        </p> */}
 
         <SwiperGallery id="swiper-it-rivne-1" photos={presentation1Photos} />
       </article>
@@ -202,7 +202,7 @@ export default function EventModal({ onIntroEnd }: Props) {
         >
           Корпоративна подія: Морквяна Марʼяна
         </h3>
-        <p className={styles.eventDesc}>
+        {/* <p className={styles.eventDesc}>
           Є місця, які мають особливу енергію. Для мене це простір, де робочі
           зустрічі із замовниками непомітно переходять у дружні розмови, а за
           філіжанкою кави народжуються найкращі ідеї. Але цього разу привід був
@@ -214,7 +214,7 @@ export default function EventModal({ onIntroEnd }: Props) {
           дарує свято рівнянам і гостям нашого міста. Десятиріччя — це не просто
           цифра. Це тисячі щасливих моментів, які ця мережа розділила з кожним
           із нас. Дякуємо за гостинність і за те, що робите наше життя солодшим!
-        </p>
+        </p> */}
 
         <SwiperGallery id="swiper-top-100-1" photos={corporate2Photos} />
       </article>
@@ -277,14 +277,14 @@ export default function EventModal({ onIntroEnd }: Props) {
         >
           Гендер Паті: It`s a BOY! 💙
         </h3>
-        <p className={styles.eventDesc}>
+        {/* <p className={styles.eventDesc}>
           Мить, коли час зупиняється, a повітря наповнюється блакитним димом. Це
           була історія про очікування, щирі сльози радості та неймовірну
           підтримку близьких. Цей день запам`ятається не лише кольором конфеті,
           a справжнім вибухом емоцій. Попереду нова подорож, сповнена драйву,
           сили та безмежного кохання. Ще один майбутній захисник, ще одна велика
           історія.
-        </p>
+        </p> */}
 
         <SwiperGallery id="swiper-gender-1" photos={gender1Photos} />
       </article>
@@ -345,9 +345,9 @@ export default function EventModal({ onIntroEnd }: Props) {
             paddingTop: "40px",
           }}
         >
-          Bauty-конференція: Be Beauty Top 100
+          Beauty-конференція: Be Beauty Top 100
         </h3>
-        <p className={styles.eventDesc}>
+        {/* <p className={styles.eventDesc}>
           Форум Be Beauty став справжнім епіцентром енергії та стилю. Це було
           щось значно більше, ніж просто галузевий захід — це потужна платформа,
           яка зібрала понад 200 учасників, готових творити нові стандарти в
@@ -357,7 +357,7 @@ export default function EventModal({ onIntroEnd }: Props) {
           тем, що піднімалися на сцені. Дякую за довіру бути голосом цього
           форуму. Це був неймовірний досвід — відчувати драйв і синергію двохсот
           сердець, що бʼються в унісон із ритмом сучасної краси!
-        </p>
+        </p> */}
 
         <SwiperGallery id="swiper-top-100-1" photos={presentation2Photos} />
       </article>
@@ -420,7 +420,7 @@ export default function EventModal({ onIntroEnd }: Props) {
         >
           Перший рік великої історії: День народження маленької принцеси
         </h3>
-        <p className={styles.eventDesc}>
+        {/* <p className={styles.eventDesc}>
           Перший день народження — це свято не лише для дитини, a передусім для
           батьків, які пройшли цей неймовірний рік разом. Це день, наповнений
           теплом, дитячим сміхом та особливою магією. Ніжна пастельна гама,
@@ -429,7 +429,7 @@ export default function EventModal({ onIntroEnd }: Props) {
           почуваються частиною однієї великої родини. Проведення зворушливих
           обрядів, перше задування свічки та створення щирих спогадів, які
           залишаться в сімейному архіві назавжди.
-        </p>
+        </p> */}
 
         <SwiperGallery id="swiper-one-year-1" photos={oneyear1Photos} />
       </article>
@@ -492,7 +492,7 @@ export default function EventModal({ onIntroEnd }: Props) {
         >
           Pool Party & Chill: Корпоративний драйв у Глібівці
         </h3>
-        <p className={styles.eventDesc}>
+        {/* <p className={styles.eventDesc}>
           Забудьте про краватки та душні офіси. Коли локація — Glibivka Family
           Park, правила гри змінюються! Цей корпоратив став ідеальним поєднанням
           релаксу біля басейну та вибухової енергії команди. Максимальна
@@ -500,7 +500,7 @@ export default function EventModal({ onIntroEnd }: Props) {
           лише живий інтерактив, актуальний гумор та створення атмосфери, де
           кожен відчуває себе «в своїй тарілці». Моя задача: Перетворити
           звичайний виїзд на природу на подію, яка обʼєднує команду сильніше.
-        </p>
+        </p> */}
 
         <SwiperGallery id="swiper-top-100-1" photos={corporate3Photos} />
       </article>
@@ -563,7 +563,7 @@ export default function EventModal({ onIntroEnd }: Props) {
         >
           Корпоративна Подія: Dubok.ua
         </h3>
-        <p className={styles.eventDesc}>
+        {/* <p className={styles.eventDesc}>
           Корпоратив @dubok.ua став яскравим прикладом того, як важливо вчасно
           «перезавантажитися» разом із людьми, з якими щодня підкорюєш
           професійні вершини. Бути частиною цього свята в ролі ведучого —
@@ -573,7 +573,7 @@ export default function EventModal({ onIntroEnd }: Props) {
           працюють справжні профі, кожен вихід до мікрофона стає частиною
           злагодженого механізму. Дякую @otto.rivne за гостинну локацію та всій
           команді «Дубок» за довіру. Ви неймовірні!
-        </p>
+        </p> */}
 
         <SwiperGallery id="swiper-dubok-1" photos={corporate1Photos} />
       </article>
@@ -636,7 +636,7 @@ export default function EventModal({ onIntroEnd }: Props) {
         >
           Більше, ніж просто івенти: Коли професіоналізм обʼєднує
         </h3>
-        <p className={styles.eventDesc}>
+        {/* <p className={styles.eventDesc}>
           Ми провели разом не один десяток заходів — від презентацій масштабних
           проектів до теплих творчих вечорів. Кожна така зустріч — це не просто
           робота, а обмін енергією з людьми, які надихають мільйони. Для мене
@@ -645,7 +645,7 @@ export default function EventModal({ onIntroEnd }: Props) {
           комфортно, а глядач — частиною великого дійства. Кожен спільний вихід
           на сцену чи фото в кулуарах — це історія про довіру, драйв та
           професіоналізм без компромісів.
-        </p>
+        </p> */}
 
         <SwiperGallery id="swiper-stars-1" photos={stars1Photos} />
       </article>
