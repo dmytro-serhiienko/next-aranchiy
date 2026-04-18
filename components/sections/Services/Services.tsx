@@ -44,9 +44,9 @@ export default function Services() {
               <span className={styles.tag}>Розпис</span>
               <span className={styles.tag}>Фуршет</span>
               <span className={styles.tag}>Камерне весілля</span>
-              <span className={styles.tag}>Декор та флористика</span>
+              {/* <span className={styles.tag}>Декор та флористика</span>
               <span className={styles.tag}>Кейтеринг</span>
-              <span className={styles.tag}>Технічне забезпечення</span>
+              <span className={styles.tag}>Технічне забезпечення</span> */}
             </div>
           </div>
 
@@ -83,8 +83,8 @@ export default function Services() {
               <span className={styles.tag}>Конференція</span>
               <span className={styles.tag}>Презентація</span>
               <span className={styles.tag}>Ювілей</span>
-              <span className={styles.tag}>Конференція</span>
-              <span className={styles.tag}>Концерт</span>
+              {/* <span className={styles.tag}>Конференція</span> */}
+              {/* <span className={styles.tag}>Концерт</span> */}
               <span className={styles.tag}>Відкриття</span>
             </div>
           </div>
