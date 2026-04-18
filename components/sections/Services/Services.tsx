@@ -76,7 +76,6 @@ export default function Services() {
               <span className={styles.tag}>Дні народження</span>
               <span className={styles.tag}>Хрестини</span>
               <span className={styles.tag}>Гендер-паті</span>
-              <span className={styles.tag}>Виїзна церемонія</span>
               <span className={styles.tag}>Презентації</span>
               <span className={styles.tag}>Конференції</span>
               <span className={styles.tag}>Форуми</span>
