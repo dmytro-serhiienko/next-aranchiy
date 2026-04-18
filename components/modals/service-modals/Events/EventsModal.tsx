@@ -130,7 +130,7 @@ export default function EventModal({ onIntroEnd }: Props) {
             paddingTop: "40px",
           }}
         >
-          IT Rivne 2025 Conference: Епіцентр технологій та ідей
+          IT Rivne 2025
         </h3>
         <p className={styles.eventDesc}>
           Подія, що обʼєднала бізнес, освіту та технології навколо штучного
