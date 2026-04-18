@@ -40,7 +40,17 @@ export const metadata: Metadata = {
     title: "Сергій Аранчій — Ведучий вашого свята.",
     description:
       "Сучасний формат, щирі емоції та професійна організація вашого івенту.",
-    images: ["/img/about-section/about-1.jpg"],
+    url: "https://next-aranchiy.vercel.app",
+    siteName: "Сергій Аранчій",
+    locale: "uk_UA",
+    images: [
+      {
+        url: "/img/about-section/about-1.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Сергій Аранчій — ведучий вашого свята",
+      },
+    ],
     type: "website",
   },
 };
