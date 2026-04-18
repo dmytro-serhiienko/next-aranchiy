@@ -395,7 +395,6 @@ export const wedding6Photos = [
   "39",
   "40",
   "41",
-  "42",
   "43",
   "44",
   "45",
@@ -437,7 +436,6 @@ export const wedding6Photos = [
   "81",
   "82",
   "83",
-  "84",
   "85",
 ].map((name) => ({
   src: `/img/services/Weddings/wedding6/${name}.jpg`,
