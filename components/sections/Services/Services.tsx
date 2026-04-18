@@ -39,14 +39,9 @@ export default function Services() {
             </div>
 
             <div className={styles.tags}>
-              <span className={styles.tag}>Виїзна церемонія</span>
-              <span className={styles.tag}>Банкет</span>
+              <span className={styles.tag}>Весілля</span>
               <span className={styles.tag}>Розпис</span>
-              <span className={styles.tag}>Фуршет</span>
-              <span className={styles.tag}>Камерне весілля</span>
-              {/* <span className={styles.tag}>Декор та флористика</span>
-              <span className={styles.tag}>Кейтеринг</span>
-              <span className={styles.tag}>Технічне забезпечення</span> */}
+              <span className={styles.tag}>Виїзна церемонія</span>
             </div>
           </div>
 
@@ -77,15 +72,14 @@ export default function Services() {
             </div>
 
             <div className={styles.tags}>
-              <span className={styles.tag}>Корпоратив</span>
-              <span className={styles.tag}>День народження</span>
-              <span className={styles.tag}>Гендер паті</span>
-              <span className={styles.tag}>Конференція</span>
-              <span className={styles.tag}>Презентація</span>
-              <span className={styles.tag}>Ювілей</span>
-              {/* <span className={styles.tag}>Конференція</span> */}
-              {/* <span className={styles.tag}>Концерт</span> */}
-              <span className={styles.tag}>Відкриття</span>
+              <span className={styles.tag}>Випускний</span>
+              <span className={styles.tag}>Дні народження</span>
+              <span className={styles.tag}>Хрестини</span>
+              <span className={styles.tag}>Гендер-паті</span>
+              <span className={styles.tag}>Виїзна церемонія</span>
+              <span className={styles.tag}>Презентації</span>
+              <span className={styles.tag}>Конференції</span>
+              <span className={styles.tag}>Форуми</span>
             </div>
           </div>
         </div>
