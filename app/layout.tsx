@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "Сергій Аранчій — Ведучий вашого свята.",
     description:
       "Сучасний формат, щирі емоції та професійна організація вашого івенту.",
-    images: ["/public/img/hero/hero-bg.png"],
+    images: ["/public/img/about-section/about-1.jpg"],
     type: "website",
   },
 };
