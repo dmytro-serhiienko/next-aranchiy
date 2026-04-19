@@ -26,34 +26,61 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
+//! META
 export const metadata: Metadata = {
-  title: "Сергій Аранчій — Ведучий вашого свята",
+  title: {
+    default: "Сергій Аранчій — Ведучий вашого свята",
+    template: "%s | Сергій Аранчій",
+  },
   description:
-    "Сергій Аранчій — професійний ведучий заходів. Незабутня атмосфера, сучасний стиль та індивідуальний підхід до вашого свята.",
-  keywords: "Сергій Аранчій, ведучий на весілля, тамада, ведучий корпоративів",
+    "Сергій Аранчій — професійний ведучий весіль, корпоративів, днів народження та інших свят по всій Україні. Сучасний стиль, щирі емоції та індивідуальний підхід до кожного заходу.",
+
+  keywords: [
+    "Сергій Аранчій",
+    "ведучий на весілля",
+    "тамада на весілля",
+    "ведучий корпоративів",
+    "ведучий на свято",
+    "професійний ведучий",
+    "тамада Київ",
+    "ведучий Україна",
+  ],
+
   authors: [{ name: "Сергій Аранчій" }],
+  creator: "Сергій Аранчій",
+
+  metadataBase: new URL("https://next-aranchiy.vercel.app"),
+
   verification: {
     google: "0cfevxYGq-zL3-EvGxpOE1UWv1TYLnyi9FID64DUpp8",
   },
-  metadataBase: new URL("https://next-aranchiy.vercel.app"),
+
   openGraph: {
-    title: "Сергій Аранчій — Ведучий вашого свята.",
+    title: "Сергій Аранчій — Ведучий вашого свята",
     description:
-      "Сучасний формат, щирі емоції та професійна організація вашого івенту.",
+      "Професійний ведучий заходів з сучасним підходом. Незабутня атмосфера, якісний звук та індивідуальний сценарій для вашого свята.",
     url: "https://next-aranchiy.vercel.app",
     siteName: "Сергій Аранчій",
     locale: "uk_UA",
+    type: "website",
     images: [
       {
         url: "/img/about-section/about-1.jpg",
         width: 1200,
         height: 630,
-        alt: "Сергій Аранчій — ведучий вашого свята",
+        alt: "Сергій Аранчій — професійний ведучий",
       },
     ],
-    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Сергій Аранчій — Ведучий вашого свята",
+    description: "Професійний ведучий весіль та свят",
+    images: ["/img/about-section/about-1.jpg"],
   },
 };
+//! META
 
 export default function RootLayout({
   children,
