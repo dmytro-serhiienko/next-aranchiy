@@ -114,20 +114,20 @@ export default function Reviews() {
                   <div
                     itemProp="itemReviewed"
                     itemScope
-                    itemType="https://schema.org/Person"
+                    itemType="https://schema.org/LocalBusiness"
                   >
                     <meta itemProp="name" content="Сергій Аранчій" />
                   </div>
 
                   <p className={styles.text} itemProp="reviewBody">
-                    `{review.text}`
+                    {review.text}
                   </p>
 
                   <div
                     className={styles.author}
                     itemProp="author"
                     itemScope
-                    itemType="https://schema.org/Person"
+                    itemType="https://schema.org/LocalBusiness"
                   >
                     <Image
                       src={review.img}
