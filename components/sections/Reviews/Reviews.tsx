@@ -111,10 +111,11 @@ export default function Reviews() {
                   itemScope
                   itemType="https://schema.org/Review"
                 >
+                  {/* ✅ itemReviewed — LocalBusiness (не Person! - це GOOGLE SEO) */}
                   <div
                     itemProp="itemReviewed"
                     itemScope
-                    itemType="https://schema.org/Person"
+                    itemType="https://schema.org/LocalBusiness"
                   >
                     <meta itemProp="name" content="Сергій Аранчій" />
                   </div>
@@ -147,6 +148,7 @@ export default function Reviews() {
                     itemType="https://schema.org/Rating"
                   >
                     <meta itemProp="ratingValue" content="5" />
+                    <meta itemProp="bestRating" content="5" />
                   </div>
                 </div>
               </div>
