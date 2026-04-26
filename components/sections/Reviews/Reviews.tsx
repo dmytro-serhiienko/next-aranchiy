@@ -114,7 +114,7 @@ export default function Reviews() {
                   <div
                     itemProp="itemReviewed"
                     itemScope
-                    itemType="https://schema.org/LocalBusiness"
+                    itemType="https://schema.org/Person"
                   >
                     <meta itemProp="name" content="Сергій Аранчій" />
                   </div>
@@ -127,7 +127,7 @@ export default function Reviews() {
                     className={styles.author}
                     itemProp="author"
                     itemScope
-                    itemType="https://schema.org/LocalBusiness"
+                    itemType="https://schema.org/Person"
                   >
                     <Image
                       src={review.img}
