@@ -141,7 +141,7 @@ export default function Reviews() {
                     />
                     <strong itemProp="name">{review.name}</strong>
                   </div>
-
+                  {/* Rating */}
                   <div
                     itemProp="reviewRating"
                     itemScope
